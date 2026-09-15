@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewi's 8-Bit Pink World 🌸🎮</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- NES.css 8-bit Framework & Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        .font-pixel { font-family: 'Press Start 2P', cursive; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        /* Floating Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-12px) rotate(3deg); }
+        }
+        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
+
+        /* Petal Rain Animation */
+        @keyframes fall {
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
+        }
+        .petal {
+            position: fixed;
+            top: -10px;
+            pointer-events: none;
+            z-index: 10;
+            animation: fall linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
+
+    <!-- FLOATING PETALS EFFECT (Bunga Melayang) -->
+    <div class="petal text-pink-400 text-sm" style="left: 10%; animation-duration: 7s;">🌸</div>
+    <div class="petal text-pink-300 text-xs" style="left: 25%; animation-duration: 9s; animation-delay: 2s;">🌸</div>
+    <div class="petal text-pink-400 text-base" style="left: 55%; animation-duration: 6s; animation-delay: 1s;">🌸</div>
+    <div class="petal text-rose-300 text-xs" style="left: 75%; animation-duration: 8s; animation-delay: 4s;">🌸</div>
+    <div class="petal text-pink-300 text-sm" style="left: 90%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
+
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="font-pixel text-xs md:text-sm text-pink-400 hover:text-pink-300 transition tracking-wider">
+                DEWI.EXE <span class="animate-pulse">🌸</span>
+            </a>
+            <div class="hidden md:flex space-x-6 text-xs font-pixel text-pink-200">
+                <a href="#about" class="hover:text-pink-400 transition">▶ ABOUT</a>
+                <a href="#skills" class="hover:text-pink-400 transition">▶ SKILLS</a>
+                <a href="#projects" class="hover:text-pink-400 transition">▶ WORK</a>
+                <a href="#contact" class="hover:text-pink-400 transition">▶ CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="min-h-screen flex items-center pt-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center w-full">
+            <div>
+                <div class="inline-block bg-pink-950/80 border-2 border-pink-500 px-3 py-1 rounded-sm mb-4">
+                    <p class="font-pixel text-[10px] text-pink-300">PLAYER 1: READY ✨</p>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                    Dewi Oktovia Salehah
+                </h1>
+                <p class="text-base text-pink-200/80 leading-relaxed mb-6">
+                    Mahasiswi Semester 7 <span class="text-pink-400 font-semibold">Sistem Informasi Kota Cerdas</span> di Politeknik Negeri Banjarmasin. Suka mengulik <span class="text-pink-400">Web GIS</span>, <span class="text-pink-400">Data Analytics</span>, <span class="text-pink-400">IoT</span>, dan <span class="text-pink-400">Cyber Security</span>! 🎮
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#projects" class="font-pixel text-xs bg-pink-500 hover:bg-pink-400 text-slate-950 font-bold px-6 py-3 rounded-none border-b-4 border-r-4 border-pink-700 active:translate-y-1 transition">
+                        PRESS START 🚀
+                    </a>
+                    <a href="#contact" class="font-pixel text-xs bg-slate-900 hover:bg-slate-800 text-pink-300 px-6 py-3 border-2 border-pink-500 transition">
+                        TALK TO ME ✉️
+                    </a>
+                </div>
+            </div>
+
+            <!-- FRAME FOTO INTERAKTIF 8-BIT + KARAKTER -->
+            <div class="flex justify-center relative">
+                <!-- Mascot Cat Pixel 1 (Top Left) -->
+                <div class="absolute -top-6 -left-2 z-20 font-pixel text-xl animate-float">
+                    🐱<span class="text-[10px] bg-pink-900 border border-pink-400 px-1 text-pink-200 rounded">Meow!</span>
+                </div>
+
+                <!-- Flower Pixel Decoration (Bottom Right) -->
+                <div class="absolute -bottom-4 -right-2 z-20 font-pixel text-2xl animate-float-delayed">
+                    🌸✨
+                </div>
+
+                <!-- Avatar Frame Box -->
+                <div class="relative w-64 h-64 md:w-72 md:h-72 p-3 bg-slate-900 border-4 border-pink-500 shadow-[8px_8px_0px_0px_rgba(244,114,182,0.4)]">
+                    <div class="w-full h-full overflow-hidden border-2 border-pink-300">
+                        <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] hover:scale-105 transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-8 flex items-center gap-3">
+            <span>👾</span> 01. STATS & BIO
+        </h2>
+        <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_rgba(244,114,182,0.2)]">
+            <p>
+                Saya adalah mahasiswi Jurusan Teknik Elektro, Program Studi Sistem Informasi Kota Cerdas di Politeknik Negeri Banjarmasin (Semester 7). Tertarik banget sama pengembangan teknologi *Smart City*, pengolahan data spasial, dan pembuatan aplikasi web modern.
+            </p>
+            <p>
+                Pernah mengemban amanah sebagai <span class="text-pink-400 font-bold border-b-2 border-pink-400">Ketua Umum LPM LENSA (2025/2026)</span>. Pengalaman kepemimpinan ini membentuk saya jadi pribadi yang adaptif, komunikatif, dan terbiasa memimpin tim teknis maupun kreatif.
+            </p>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-10 flex items-center gap-3">
+            <span>⚡</span> 02. SKILL TREE
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Skill Card 1 -->
+            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
+                <div class="font-pixel text-pink-400 text-sm mb-3">💻 WEB & APP</div>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">PHP</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Laravel</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Flutter</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Skill Card 2 -->
+            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
+                <div class="font-pixel text-pink-400 text-sm mb-3">🗺️ DATA & GIS</div>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Python</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">QGIS</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Leaflet.js</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Looker Studio</span>
+                </div>
+            </div>
+
+            <!-- Skill Card 3 -->
+            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
+                <div class="font-pixel text-pink-400 text-sm mb-3">🛡️ IOT & SEC</div>
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">ESP32</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Firebase</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Kali Linux</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Nmap</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-10 flex items-center gap-3">
+            <span>🏆</span> 03. QUEST & PROJECTS
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Proyek 1 -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[10px] text-pink-400">WEB GIS QUEST</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Pemetaan Rawan Banjir Banjarmasin</h3>
+                    <p class="text-pink-200/70 text-sm mb-4">Aplikasi pemetaan interaktif zona rawan banjir berbasis Leaflet.js serta sistem pelaporan lokasi spasial real-time.</p>
+                </div>
+                <div>
+                    <div class="text-xs font-mono text-pink-300 mb-4">PHP • Leaflet.js • QGIS</div>
+                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                </div>
+            </div>
+
+            <!-- Proyek 2 -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[10px] text-pink-400">BUSINESS INTELLIGENCE</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Data Warehouse Transportasi Publik</h3>
+                    <p class="text-pink-200/70 text-sm mb-4">Arsitektur data warehouse Star Schema & pemrosesan ETL Pentaho untuk dashboard KPI rute transportasi Smart City.</p>
+                </div>
+                <div>
+                    <div class="text-xs font-mono text-pink-300 mb-4">Pentaho ETL • PostgreSQL • Looker Studio</div>
+                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                </div>
+            </div>
+
+            <!-- Proyek 3 -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[10px] text-pink-400">DATA ANALYTICS</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Dashboard Analytics PLN UID Kalselteng</h3>
+                    <p class="text-pink-200/70 text-sm mb-4">Visualisasi data operasional dan peta persebaran aset Gardu Induk PLN berbasis dashboard interaktif.</p>
+                </div>
+                <div>
+                    <div class="text-xs font-mono text-pink-300 mb-4">Looker Studio • Python • Folium</div>
+                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                </div>
+            </div>
+
+            <!-- Proyek 4 -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[10px] text-pink-400">IOT SYSTEM</span>
+                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Environmental Monitoring ESP32</h3>
+                    <p class="text-pink-200/70 text-sm mb-4">Pemantauan suhu & kelembapan real-time berbasis sensor DHT22, ESP32, dan Firebase Realtime Database.</p>
+                </div>
+                <div>
+                    <div class="text-xs font-mono text-pink-300 mb-4">ESP32 • DHT22 • Firebase</div>
+                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/50">
+        <h2 class="font-pixel text-xl text-white mb-4">GAME OVER? LET'S TALK! 💌</h2>
+        <p class="text-pink-200/70 text-sm mb-8 max-w-lg mx-auto">
+            Tertarik berkolaborasi atau sekadar mau menyapa? Silakan hubungi saya melalui media sosial di bawah ini!
+        </p>
+        <div class="flex justify-center gap-6 text-2xl mb-8">
+            <a href="https://github.com/DewiosC050423011" target="_blank" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-brands fa-github"></i></a>
+            <a href="https://instagram.com/dewioss" target="_blank" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:dozxuk@gmail.com" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-8 text-center text-xs text-pink-300/40 border-t-4 border-pink-950/40">
+        <p>© 2026 Dewi Oktovia Salehah. Built with HTML & Tailwind CSS.</p>
+    </footer>
+
+</body>
+</html>
