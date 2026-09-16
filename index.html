@@ -3,26 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dewi's 8-Bit Pink World 🌸🎮</title>
+    <title>Dewi's 8-Bit Coquette World 🎀🎮🌸</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- NES.css 8-bit Framework & Font -->
+    
+    <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- AOS (Animate On Scroll) CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <style>
         .font-pixel { font-family: 'Press Start 2P', cursive; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
         
+        /* Custom Background Pattern 8-bit Dark Pink */
+        .bg-dark-coquette {
+            background-color: #1c0915;
+            background-image: 
+                radial-gradient(#4a1236 1px, transparent 1px), 
+                radial-gradient(#4a1236 1px, #1c0915 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+        }
+
+        /* Border Renda / Coquette Ribbon Style */
+        .coquette-border {
+            border: 4px solid #f472b6;
+            box-shadow: 6px 6px 0px 0px #831843, 12px 12px 0px 0px rgba(244, 114, 182, 0.2);
+        }
+
         /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-12px) rotate(3deg); }
+            50% { transform: translateY(-10px) rotate(3deg); }
         }
         .animate-float { animation: float 4s ease-in-out infinite; }
         .animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
 
-        /* Petal Rain Animation */
+        /* Petal & Ribbon Rain Animation */
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
             100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
@@ -34,22 +55,55 @@
             z-index: 10;
             animation: fall linear infinite;
         }
+
+        /* Custom Scrollbar Coquette */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1c0915;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #f472b6;
+            border-radius: 0px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb7185;
+        }
     </style>
 </head>
-<body class="bg-slate-950 text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
+<body class="bg-dark-coquette text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
 
-    <!-- FLOATING PETALS EFFECT (Bunga Melayang) -->
-    <div class="petal text-pink-400 text-sm" style="left: 10%; animation-duration: 7s;">🌸</div>
-    <div class="petal text-pink-300 text-xs" style="left: 25%; animation-duration: 9s; animation-delay: 2s;">🌸</div>
-    <div class="petal text-pink-400 text-base" style="left: 55%; animation-duration: 6s; animation-delay: 1s;">🌸</div>
-    <div class="petal text-rose-300 text-xs" style="left: 75%; animation-duration: 8s; animation-delay: 4s;">🌸</div>
-    <div class="petal text-pink-300 text-sm" style="left: 90%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
+    <!-- 1. ANIMASI LOADING (PLEASE WAIT) -->
+    <div id="loading-screen" class="fixed inset-0 z-50 bg-[#280c1e] flex flex-col items-center justify-center transition-opacity duration-700">
+        <div class="text-center space-y-4 px-4">
+            <div class="text-4xl md:text-5xl animate-bounce mb-2">🎀🌸🎮</div>
+            <h2 class="font-pixel text-pink-300 text-sm md:text-base tracking-widest animate-pulse">
+                PLEASE WAIT...
+            </h2>
+            <p class="font-pixel text-[10px] text-pink-400/80">LOADING DEWI'S WORLD</p>
+            
+            <!-- Progress Bar 8-bit -->
+            <div class="w-48 md:w-64 h-5 bg-[#1c0915] border-2 border-pink-400 p-1 mx-auto relative overflow-hidden">
+                <div id="loading-bar" class="h-full bg-pink-500 w-0 transition-all duration-300 ease-out"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING PETALS & RIBBONS EFFECT -->
+    <div class="hidden md:block">
+        <div class="petal text-pink-400 text-sm" style="left: 5%; animation-duration: 7s;">🌸</div>
+        <div class="petal text-pink-300 text-xs" style="left: 20%; animation-duration: 9s; animation-delay: 2s;">🎀</div>
+        <div class="petal text-pink-400 text-base" style="left: 45%; animation-duration: 6s; animation-delay: 1s;">✨</div>
+        <div class="petal text-rose-300 text-xs" style="left: 70%; animation-duration: 8s; animation-delay: 4s;">🌸</div>
+        <div class="petal text-pink-300 text-sm" style="left: 88%; animation-duration: 10s; animation-delay: 3s;">🎀</div>
+    </div>
 
     <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full bg-slate-950/90 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3">
+    <nav class="fixed top-0 left-0 w-full bg-[#1c0915]/90 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <a href="#" class="font-pixel text-xs md:text-sm text-pink-400 hover:text-pink-300 transition tracking-wider">
-                DEWI.EXE <span class="animate-pulse">🌸</span>
+            <a href="#" class="font-pixel text-xs md:text-sm text-pink-300 hover:text-pink-200 transition tracking-wider flex items-center gap-2">
+                <span>🎀</span> DEWI.EXE <span class="animate-pulse">🌸</span>
             </a>
             <div class="hidden md:flex space-x-6 text-xs font-pixel text-pink-200">
                 <a href="#about" class="hover:text-pink-400 transition">▶ ABOUT</a>
@@ -61,40 +115,42 @@
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="min-h-screen flex items-center pt-24 px-6 max-w-6xl mx-auto">
+    <section class="min-h-screen flex items-center pt-28 pb-16 px-6 max-w-6xl mx-auto scroll-mt-20">
         <div class="grid md:grid-cols-2 gap-12 items-center w-full">
-            <div>
-                <div class="inline-block bg-pink-950/80 border-2 border-pink-500 px-3 py-1 rounded-sm mb-4">
-                    <p class="font-pixel text-[10px] text-pink-300">PLAYER 1: READY ✨</p>
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 bg-[#3b122c] border-2 border-pink-400 px-3 py-1 rounded-none mb-4 shadow-[3px_3px_0px_0px_#f472b6]">
+                    <span class="text-xs">🎀</span>
+                    <p class="font-pixel text-[10px] text-pink-200">PLAYER 1: READY ✨</p>
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4">
+                <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-[2px_2px_0px_#831843]">
                     Dewi Oktovia Salehah
                 </h1>
-                <p class="text-base text-pink-200/80 leading-relaxed mb-6">
-                    Mahasiswi Semester 7 <span class="text-pink-400 font-semibold">Sistem Informasi Kota Cerdas</span> di Politeknik Negeri Banjarmasin. Kadang Suka mengulik <span class="text-pink-400">Web GIS</span>, <span class="text-pink-400">Data Analytics</span>, <span class="text-pink-400">IoT</span>, dan <span class="text-pink-400">Cyber Security</span>! 🎮
+                <p class="text-base text-pink-200/90 leading-relaxed mb-6 bg-[#280c1e]/60 p-4 border-l-4 border-pink-400">
+                    Mahasiswi Semester 7 <span class="text-pink-300 font-semibold">Sistem Informasi Kota Cerdas</span> di Politeknik Negeri Banjarmasin. Kadang suka mengulik <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Web GIS</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Data Analytics</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">IoT</span>, dan <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Cyber Security</span>! 🎀🎮
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="font-pixel text-xs bg-pink-500 hover:bg-pink-400 text-slate-950 font-bold px-6 py-3 rounded-none border-b-4 border-r-4 border-pink-700 active:translate-y-1 transition">
-                        PRESS START 🚀
+                    <a href="#projects" class="font-pixel text-xs bg-pink-500 hover:bg-pink-400 text-slate-950 font-bold px-6 py-3 rounded-none border-b-4 border-r-4 border-pink-800 active:translate-y-1 transition flex items-center gap-2 shadow-lg">
+                        <span>🎀</span> PRESS START 🚀
                     </a>
-                    <a href="#contact" class="font-pixel text-xs bg-slate-900 hover:bg-slate-800 text-pink-300 px-6 py-3 border-2 border-pink-500 transition">
-                        TALK TO ME ✉️
+                    <a href="#contact" class="font-pixel text-xs bg-[#280c1e] hover:bg-[#3b122c] text-pink-300 px-6 py-3 border-2 border-pink-400 transition flex items-center gap-2">
+                        <span>✉️</span> TALK TO ME
                     </a>
                 </div>
             </div>
 
-            <!-- FRAME FOTO INTERAKTIF 8-BIT + KARAKTER -->
-            <div class="flex justify-center relative">
-                <div class="absolute -top-6 -left-2 z-20 font-pixel text-xl animate-float">
-                    🐱<span class="text-[10px] bg-pink-900 border border-pink-400 px-1 text-pink-200 rounded">Meow!</span>
+            <!-- FRAME FOTO INTERAKTIF 8-BIT COQUETTE -->
+            <div class="flex justify-center relative" data-aos="fade-left" data-aos-duration="1000">
+                <div class="absolute -top-7 -left-3 z-20 font-pixel text-xl animate-float">
+                    🎀<span class="text-[10px] bg-[#3b122c] border border-pink-400 px-2 py-0.5 text-pink-200 shadow-sm">Soft & Cute!</span>
                 </div>
-                <div class="absolute -bottom-4 -right-2 z-20 font-pixel text-2xl animate-float-delayed">
-                    🌸✨
+                <div class="absolute -bottom-5 -right-3 z-20 font-pixel text-2xl animate-float-delayed">
+                    🌸🧸✨
                 </div>
 
-                <div class="relative w-64 h-64 md:w-72 md:h-72 p-3 bg-slate-900 border-4 border-pink-500 shadow-[8px_8px_0px_0px_rgba(244,114,182,0.4)]">
-                    <div class="w-full h-full overflow-hidden border-2 border-pink-300">
-                        <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] hover:scale-105 transition duration-500">
+                <div class="relative w-64 h-64 md:w-72 md:h-72 p-3 bg-[#280c1e] coquette-border">
+                    <div class="w-full h-full overflow-hidden border-2 border-pink-300 relative group">
+                        <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-pink-500/10 pointer-events-none"></div>
                     </div>
                 </div>
             </div>
@@ -102,51 +158,61 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-8 flex items-center gap-3">
-            <span>👾</span> 01. STATS & BIO
+    <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-8 flex items-center gap-3" data-aos="fade-right">
+            <span>👾</span> 01. STATS & BIO 🎀
         </h2>
-        <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_rgba(244,114,182,0.2)]">
+        <div class="bg-[#280c1e]/80 border-2 border-pink-400/60 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_#4a1236]" data-aos="zoom-in-up">
             <p>
-                Saya adalah mahasiswi Jurusan Teknik Elektro, Program Studi Sistem Informasi Kota Cerdas di Politeknik Negeri Banjarmasin (Semester 7). Tertarik banget sama pengembangan teknologi <span class="text-pink-400 font-bold border-b-2 border-pink-400">Smart City</span>, pengolahan data spasial, dan pembuatan aplikasi dan web sederhana semi modern.
+                Saya adalah mahasiswi Jurusan Teknik Elektro, 
+                Program Studi Sistem Informasi Kota Cerdas di Politeknik Negeri Banjarmasin 
+                (Semester 7). Tertarik banget sama pengembangan 
+                teknologi <span class="text-pink-300 font-bold border-b-2 border-pink-400">Smart City</span>, 
+                pengolahan data spasial, dan pembuatan aplikasi dan web sederhana semi modern. 🌸✨
             </p>
         </div>
     </section>
 
     <!-- SKILLS SECTION -->
-    <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-10 flex items-center gap-3">
-            <span>⚡</span> 02. SKILL TREE
+    <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3" data-aos="fade-right">
+            <span>⚡</span> 02. SKILL TREE 🎀
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
-                <div class="font-pixel text-pink-400 text-sm mb-3">💻 WEB & APP</div>
+            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="100">
+                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+                    <span>💻</span> WEB & APP
+                </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">PHP</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Laravel</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Flutter</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">JavaScript</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">PHP</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Laravel</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Flutter</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">JavaScript</span>
                 </div>
             </div>
 
-            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
-                <div class="font-pixel text-pink-400 text-sm mb-3">🗺️ DATA & GIS</div>
+            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="200">
+                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+                    <span>🗺️</span> DATA & GIS
+                </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Python</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">QGIS</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Leaflet.js</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Looker Studio</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Python</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">QGIS</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Leaflet.js</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Looker Studio</span>
                 </div>
             </div>
 
-            <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
-                <div class="font-pixel text-pink-400 text-sm mb-3">🛡️ IOT & SEC</div>
+            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="300">
+                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+                    <span>🛡️</span> IOT & SEC
+                </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">ESP32 / C++</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Firebase</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Kali Linux</span>
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Nmap</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">ESP32 / C++</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Firebase</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Kali Linux</span>
+                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Nmap</span>
                 </div>
             </div>
 
@@ -154,126 +220,126 @@
     </section>
 
     <!-- PROJECTS SECTION -->
-    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-10 flex items-center gap-3">
-            <span>🏆</span> 03. QUEST & REPOSITORIES
+    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3" data-aos="fade-right">
+            <span>🏆</span> 03. QUEST & REPOSITORIES 🎀
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Repo 1: Dashboard PLN -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 1 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">DATA & ANALYTICS</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 DATA & ANALYTICS</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">dashboard-pln-kalselteng1</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Dashboard analytics dan pemantauan data operasional PLN UID Kalselteng.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python</div>
-                    <a href="https://github.com/DewiosC050423011/dashboard-pln-kalselteng1" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/dashboard-pln-kalselteng1" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 2: Firebase Realtime -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 2 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">IOT & EMBEDDED</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 IOT & EMBEDDED</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">firebase-realtime</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Integrasi sistem IoT mikrokontroler dengan Firebase Realtime Database.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">C++ • ESP32</div>
-                    <a href="https://github.com/DewiosC050423011/firebase-realtime" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/firebase-realtime" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 3: Realtime Face Detection -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 3 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">MACHINE LEARNING</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 MACHINE LEARNING</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">realtime-face-detection</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Proyek pengenalan dan pendeteksian wajah secara real-time berbasis OpenCV.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python • OpenCV</div>
-                    <a href="https://github.com/DewiosC050423011/realtime-face-detection" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/realtime-face-detection" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 4: Vulner Project -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 4 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">CYBER SECURITY</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 CYBER SECURITY</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">vulner-project</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Eksperimen simulasi dan pengujian kerentanan keamanan web aplikasi (Proyek UAS).</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Web Security</div>
-                    <a href="https://github.com/DewiosC050423011/vulner-project" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/vulner-project" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 5: Kampus App -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 5 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">kampus-app</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Aplikasi pengelolaan data kampus berbasis framework Laravel.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Blade • Laravel • PHP</div>
-                    <a href="https://github.com/DewiosC050423011/kampus-app" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/kampus-app" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 6: Booking Class -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 6 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">booking-class-simple-web</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Sistem aplikasi pemesanan dan peminjaman ruangan kelas berbasis web.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • MySQL</div>
-                    <a href="https://github.com/DewiosC050423011/booking-class-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/booking-class-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 7: Library Web -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 7 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">library-simple-web</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Sistem informasi manajemen perpustakaan sederhana (Exam Project).</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Database</div>
-                    <a href="https://github.com/DewiosC050423011/library-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/library-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 8: Bunny Game RPG -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 8 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">GAME DEV</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 GAME DEV</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">bunny-game-RPG</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Eksperimen pembuatan game 3D berbasis Python.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python • 3D Game</div>
-                    <a href="https://github.com/DewiosC050423011/bunny-game-RPG" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/bunny-game-RPG" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Repo 9: Birthday Project -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 9 -->
+            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
                 <div>
-                    <span class="font-pixel text-[9px] text-pink-400">CREATIVE WEB</span>
+                    <span class="font-pixel text-[9px] text-pink-300">🎀 CREATIVE WEB</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">birthday</h3>
                     <p class="text-pink-200/70 text-xs mb-4">Proyek web ucapan ulang tahun interaktif.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">CSS • HTML</div>
-                    <a href="https://github.com/DewiosC050423011/birthday" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                    <a href="https://github.com/DewiosC050423011/birthday" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
@@ -281,22 +347,47 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/50">
-        <h2 class="font-pixel text-xl text-white mb-4">GAME OVER? LET'S TALK! 💌</h2>
-        <p class="text-pink-200/70 text-sm mb-8 max-w-lg mx-auto">
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/60 scroll-mt-20" data-aos="zoom-in">
+        <h2 class="font-pixel text-xl text-white mb-4">GAME OVER? LET'S TALK! 🎀💌</h2>
+        <p class="text-pink-200/80 text-sm mb-8 max-w-lg mx-auto">
             Tertarik berkolaborasi atau sekadar mau menyapa? Silakan hubungi saya melalui media sosial di bawah ini!
         </p>
-        <div class="flex justify-center gap-6 text-2xl mb-8">
-            <a href="https://github.com/DewiosC050423011" target="_blank" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-brands fa-github"></i></a>
-            <a href="https://instagram.com/dewioss" target="_blank" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-brands fa-instagram"></i></a>
-            <a href="mailto:dozxuk@gmail.com" class="text-pink-400 hover:scale-125 transition duration-200"><i class="fa-solid fa-envelope"></i></a>
+        <div class="flex justify-center gap-6 text-3xl mb-8">
+            <a href="https://github.com/DewiosC050423011" target="_blank" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-brands fa-github"></i></a>
+            <a href="https://instagram.com/dewioss" target="_blank" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:dozxuk@gmail.com" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-solid fa-envelope"></i></a>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 text-center text-xs text-pink-300/40 border-t-4 border-pink-950/40">
-        <p>© 2026 Dewi Oktovia Salehah. Built with HTML & Tailwind CSS.</p>
+    <footer class="py-8 text-center text-xs text-pink-300/50 border-t-4 border-pink-950/60 bg-[#14060f]">
+        <p>© 2026 Dewi Oktovia Salehah 🎀 Built with HTML, Tailwind CSS & Soft Pixel Vibe.</p>
     </footer>
 
+    <!-- AOS (Animate On Scroll) JS & Loading Logic -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Init Scroll Animation
+        AOS.init({
+            once: true,
+            duration: 800
+        });
+
+        // Loading Screen Logic
+        window.addEventListener('load', () => {
+            const bar = document.getElementById('loading-bar');
+            const screen = document.getElementById('loading-screen');
+            
+            // Simulasi progress bar meluncur halus
+            bar.style.width = '100%';
+            
+            setTimeout(() => {
+                screen.style.opacity = '0';
+                setTimeout(() => {
+                    screen.style.display = 'none';
+                }, 700);
+            }, 600);
+        });
+    </script>
 </body>
 </html>
