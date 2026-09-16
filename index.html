@@ -85,17 +85,13 @@
 
             <!-- FRAME FOTO INTERAKTIF 8-BIT + KARAKTER -->
             <div class="flex justify-center relative">
-                <!-- Mascot Cat Pixel 1 (Top Left) -->
                 <div class="absolute -top-6 -left-2 z-20 font-pixel text-xl animate-float">
                     🐱<span class="text-[10px] bg-pink-900 border border-pink-400 px-1 text-pink-200 rounded">Meow!</span>
                 </div>
-
-                <!-- Flower Pixel Decoration (Bottom Right) -->
                 <div class="absolute -bottom-4 -right-2 z-20 font-pixel text-2xl animate-float-delayed">
                     🌸✨
                 </div>
 
-                <!-- Avatar Frame Box -->
                 <div class="relative w-64 h-64 md:w-72 md:h-72 p-3 bg-slate-900 border-4 border-pink-500 shadow-[8px_8px_0px_0px_rgba(244,114,182,0.4)]">
                     <div class="w-full h-full overflow-hidden border-2 border-pink-300">
                         <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] hover:scale-105 transition duration-500">
@@ -127,7 +123,6 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <!-- Skill Card 1 -->
             <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
                 <div class="font-pixel text-pink-400 text-sm mb-3">💻 WEB & APP</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
@@ -138,7 +133,6 @@
                 </div>
             </div>
 
-            <!-- Skill Card 2 -->
             <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
                 <div class="font-pixel text-pink-400 text-sm mb-3">🗺️ DATA & GIS</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
@@ -149,11 +143,10 @@
                 </div>
             </div>
 
-            <!-- Skill Card 3 -->
             <div class="bg-slate-900/60 border-2 border-pink-500/30 p-6 hover:border-pink-400 hover:-translate-y-1 transition duration-200">
                 <div class="font-pixel text-pink-400 text-sm mb-3">🛡️ IOT & SEC</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">ESP32</span>
+                    <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">ESP32 / C++</span>
                     <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Firebase</span>
                     <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Kali Linux</span>
                     <span class="bg-pink-950 text-pink-300 px-2 py-1 border border-pink-700">Nmap</span>
@@ -166,59 +159,124 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/50">
         <h2 class="font-pixel text-lg md:text-xl text-pink-400 mb-10 flex items-center gap-3">
-            <span>🏆</span> 03. QUEST & PROJECTS
+            <span>🏆</span> 03. QUEST & REPOSITORIES
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Proyek 1 -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 1: Dashboard PLN -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
                 <div>
-                    <span class="font-pixel text-[10px] text-pink-400">WEB GIS QUEST</span>
-                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Pemetaan Rawan Banjir Banjarmasin</h3>
-                    <p class="text-pink-200/70 text-sm mb-4">Aplikasi pemetaan interaktif zona rawan banjir berbasis Leaflet.js serta sistem pelaporan lokasi spasial real-time.</p>
+                    <span class="font-pixel text-[9px] text-pink-400">DATA & ANALYTICS</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">dashboard-pln-kalselteng1</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Dashboard analytics dan pemantauan data operasional PLN UID Kalselteng.</p>
                 </div>
                 <div>
-                    <div class="text-xs font-mono text-pink-300 mb-4">PHP • Leaflet.js • QGIS</div>
-                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
-                </div>
-            </div>
-
-            <!-- Proyek 2 -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
-                <div>
-                    <span class="font-pixel text-[10px] text-pink-400">BUSINESS INTELLIGENCE</span>
-                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Data Warehouse Transportasi Publik</h3>
-                    <p class="text-pink-200/70 text-sm mb-4">Arsitektur data warehouse Star Schema & pemrosesan ETL Pentaho untuk dashboard KPI rute transportasi Smart City.</p>
-                </div>
-                <div>
-                    <div class="text-xs font-mono text-pink-300 mb-4">Pentaho ETL • PostgreSQL • Looker Studio</div>
-                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python</div>
+                    <a href="https://github.com/DewiosC050423011/dashboard-pln-kalselteng1" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Proyek 3 -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 2: Firebase Realtime -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
                 <div>
-                    <span class="font-pixel text-[10px] text-pink-400">DATA ANALYTICS</span>
-                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Dashboard Analytics PLN UID Kalselteng</h3>
-                    <p class="text-pink-200/70 text-sm mb-4">Visualisasi data operasional dan peta persebaran aset Gardu Induk PLN berbasis dashboard interaktif.</p>
+                    <span class="font-pixel text-[9px] text-pink-400">IOT & EMBEDDED</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">firebase-realtime</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Integrasi sistem IoT mikrokontroler dengan Firebase Realtime Database.</p>
                 </div>
                 <div>
-                    <div class="text-xs font-mono text-pink-300 mb-4">Looker Studio • Python • Folium</div>
-                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">C++ • ESP32</div>
+                    <a href="https://github.com/DewiosC050423011/firebase-realtime" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <!-- Proyek 4 -->
-            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-6 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+            <!-- Repo 3: Realtime Face Detection -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
                 <div>
-                    <span class="font-pixel text-[10px] text-pink-400">IOT SYSTEM</span>
-                    <h3 class="text-lg font-bold text-white mt-2 mb-3">Environmental Monitoring ESP32</h3>
-                    <p class="text-pink-200/70 text-sm mb-4">Pemantauan suhu & kelembapan real-time berbasis sensor DHT22, ESP32, dan Firebase Realtime Database.</p>
+                    <span class="font-pixel text-[9px] text-pink-400">MACHINE LEARNING</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">realtime-face-detection</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Proyek pengenalan dan pendeteksian wajah secara real-time berbasis OpenCV.</p>
                 </div>
                 <div>
-                    <div class="text-xs font-mono text-pink-300 mb-4">ESP32 • DHT22 • Firebase</div>
-                    <a href="https://github.com/DewiosC050423011" target="_blank" class="font-pixel text-[10px] text-pink-400 hover:text-pink-300">VIEW SOURCE ▶</a>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python • OpenCV</div>
+                    <a href="https://github.com/DewiosC050423011/realtime-face-detection" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 4: Vulner Project -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">CYBER SECURITY</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">vulner-project</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Eksperimen simulasi dan pengujian kerentanan keamanan web aplikasi (Proyek UAS).</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Web Security</div>
+                    <a href="https://github.com/DewiosC050423011/vulner-project" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 5: Kampus App -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">kampus-app</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Aplikasi pengelolaan data kampus berbasis framework Laravel.</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">Blade • Laravel • PHP</div>
+                    <a href="https://github.com/DewiosC050423011/kampus-app" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 6: Booking Class -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">booking-class-simple-web</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Sistem aplikasi pemesanan dan peminjaman ruangan kelas berbasis web.</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • MySQL</div>
+                    <a href="https://github.com/DewiosC050423011/booking-class-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 7: Library Web -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">WEB DEVELOPMENT</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">library-simple-web</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Sistem informasi manajemen perpustakaan sederhana (Exam Project).</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Database</div>
+                    <a href="https://github.com/DewiosC050423011/library-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 8: Bunny Game RPG -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">GAME DEV</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">bunny-game-RPG</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Eksperimen pembuatan game 3D berbasis Python.</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python • 3D Game</div>
+                    <a href="https://github.com/DewiosC050423011/bunny-game-RPG" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
+                </div>
+            </div>
+
+            <!-- Repo 9: Birthday Project -->
+            <div class="bg-slate-900/80 border-2 border-pink-500/40 p-5 flex flex-col justify-between hover:shadow-[6px_6px_0px_0px_rgba(244,114,182,0.4)] transition">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-400">CREATIVE WEB</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">birthday</h3>
+                    <p class="text-pink-200/70 text-xs mb-4">Proyek web ucapan ulang tahun interaktif.</p>
+                </div>
+                <div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-3">CSS • HTML</div>
+                    <a href="https://github.com/DewiosC050423011/birthday" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-300">VIEW REPO ▶</a>
                 </div>
             </div>
 
