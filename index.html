@@ -11,9 +11,6 @@
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS (Animate On Scroll) CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         .font-pixel { font-family: 'Press Start 2P', cursive; }
@@ -25,8 +22,8 @@
             background-image: 
                 radial-gradient(#4a1236 1px, transparent 1px), 
                 radial-gradient(#4a1236 1px, #1c0915 1px);
-            background-size: 40px 40px;
-            background-position: 0 0, 20px 20px;
+            background-size: 32px 32px;
+            background-position: 0 0, 16px 16px;
         }
 
         /* Border Renda / Coquette Ribbon Style */
@@ -46,30 +43,64 @@
         /* Petal & Ribbon Rain Animation */
         @keyframes fall {
             0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.3; }
         }
         .petal {
             position: fixed;
-            top: -10px;
+            top: -20px;
             pointer-events: none;
-            z-index: 10;
+            z-index: 30;
             animation: fall linear infinite;
         }
 
+        /* EFEK 3D POP-OUT & NYEMBUL UNTUK SKILL CARD */
+        .card-3d {
+            background-color: rgba(40, 12, 30, 0.9);
+            border: 3px solid #f472b6;
+            box-shadow: 0px 8px 0px 0px #831843, 0px 12px 15px rgba(0,0,0,0.5);
+            transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0px 16px 0px 0px #be185d, 0px 20px 25px rgba(244, 114, 182, 0.3);
+            border-color: #fbcfe8;
+        }
+
+        /* BADGE 3D NYEMBUL */
+        .badge-3d {
+            background-color: #3b122c;
+            color: #fbcfe8;
+            border: 2px solid #ec4899;
+            box-shadow: 2px 3px 0px 0px #831843;
+            transition: all 0.2s ease;
+        }
+
+        .card-3d:hover .badge-3d {
+            box-shadow: 3px 4px 0px 0px #be185d;
+            transform: translateY(-2px);
+            background-color: #4c1d3d;
+            border-color: #f472b6;
+        }
+
+        /* CUSTOM SCROLL-DRIVEN ANIMATION (FADE IN & FADE OUT) */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.96);
+            transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .scroll-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
         /* Custom Scrollbar Coquette */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1c0915;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f472b6;
-            border-radius: 0px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #fb7185;
-        }
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #1c0915; }
+        ::-webkit-scrollbar-thumb { background: #f472b6; }
+        ::-webkit-scrollbar-thumb:hover { background: #fb7185; }
     </style>
 </head>
 <body class="bg-dark-coquette text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
@@ -91,13 +122,11 @@
     </div>
 
     <!-- FLOATING PETALS & RIBBONS EFFECT -->
-    <div class="hidden md:block">
-        <div class="petal text-pink-400 text-sm" style="left: 5%; animation-duration: 7s;">🌸</div>
-        <div class="petal text-pink-300 text-xs" style="left: 20%; animation-duration: 9s; animation-delay: 2s;">🎀</div>
-        <div class="petal text-pink-400 text-base" style="left: 45%; animation-duration: 6s; animation-delay: 1s;">✨</div>
-        <div class="petal text-rose-300 text-xs" style="left: 70%; animation-duration: 8s; animation-delay: 4s;">🌸</div>
-        <div class="petal text-pink-300 text-sm" style="left: 88%; animation-duration: 10s; animation-delay: 3s;">🎀</div>
-    </div>
+    <div class="petal text-pink-400 text-sm" style="left: 8%; animation-duration: 7s;">🌸</div>
+    <div class="petal text-pink-300 text-xs" style="left: 22%; animation-duration: 9s; animation-delay: 2s;">🎀</div>
+    <div class="petal text-pink-400 text-base" style="left: 48%; animation-duration: 6s; animation-delay: 1s;">🌸</div>
+    <div class="petal text-rose-300 text-xs" style="left: 72%; animation-duration: 8s; animation-delay: 4s;">🎀</div>
+    <div class="petal text-pink-300 text-sm" style="left: 88%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
 
     <!-- NAVBAR -->
     <nav class="fixed top-0 left-0 w-full bg-[#1c0915]/90 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3">
@@ -117,7 +146,7 @@
     <!-- HERO SECTION -->
     <section class="min-h-screen flex items-center pt-28 pb-16 px-6 max-w-6xl mx-auto scroll-mt-20">
         <div class="grid md:grid-cols-2 gap-12 items-center w-full">
-            <div data-aos="fade-right" data-aos-duration="1000">
+            <div class="scroll-reveal">
                 <div class="inline-flex items-center gap-2 bg-[#3b122c] border-2 border-pink-400 px-3 py-1 rounded-none mb-4 shadow-[3px_3px_0px_0px_#f472b6]">
                     <span class="text-xs">🎀</span>
                     <p class="font-pixel text-[10px] text-pink-200">PLAYER 1: READY ✨</p>
@@ -125,7 +154,7 @@
                 <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-[2px_2px_0px_#831843]">
                     Dewi Oktovia Salehah
                 </h1>
-                <p class="text-base text-pink-200/90 leading-relaxed mb-6 bg-[#280c1e]/60 p-4 border-l-4 border-pink-400">
+                <p class="text-base text-pink-200/90 leading-relaxed mb-6 bg-[#280c1e]/80 p-4 border-l-4 border-pink-400 shadow-md">
                     Mahasiswi Semester 7 <span class="text-pink-300 font-semibold">Sistem Informasi Kota Cerdas</span> di Politeknik Negeri Banjarmasin. Kadang suka mengulik <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Web GIS</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Data Analytics</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">IoT</span>, dan <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Cyber Security</span>! 🎀🎮
                 </p>
                 <div class="flex flex-wrap gap-4">
@@ -139,7 +168,7 @@
             </div>
 
             <!-- FRAME FOTO INTERAKTIF 8-BIT COQUETTE -->
-            <div class="flex justify-center relative" data-aos="fade-left" data-aos-duration="1000">
+            <div class="flex justify-center relative scroll-reveal">
                 <div class="absolute -top-7 -left-3 z-20 font-pixel text-xl animate-float">
                     🎀<span class="text-[10px] bg-[#3b122c] border border-pink-400 px-2 py-0.5 text-pink-200 shadow-sm">Soft & Cute!</span>
                 </div>
@@ -159,10 +188,10 @@
 
     <!-- ABOUT SECTION -->
     <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-8 flex items-center gap-3" data-aos="fade-right">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-8 flex items-center gap-3 scroll-reveal">
             <span>👾</span> 01. STATS & BIO 🎀
         </h2>
-        <div class="bg-[#280c1e]/80 border-2 border-pink-400/60 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_#4a1236]" data-aos="zoom-in-up">
+        <div class="bg-[#280c1e]/90 border-2 border-pink-400/60 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_#4a1236] scroll-reveal">
             <p>
                 Saya adalah mahasiswi Jurusan Teknik Elektro, 
                 Program Studi Sistem Informasi Kota Cerdas di Politeknik Negeri Banjarmasin 
@@ -173,65 +202,67 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION -->
+    <!-- SKILLS SECTION (EFEK 3D NYEMBUL + FADE IN/OUT SCROLL) -->
     <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3" data-aos="fade-right">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3 scroll-reveal">
             <span>⚡</span> 02. SKILL TREE 🎀
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             
-            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="100">
-                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+            <!-- SKILL CARD 1 -->
+            <div class="card-3d p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
                     <span>💻</span> WEB & APP
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">PHP</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Laravel</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Flutter</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">JavaScript</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">PHP</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Laravel</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Flutter</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">JavaScript</span>
                 </div>
             </div>
 
-            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="200">
-                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+            <!-- SKILL CARD 2 -->
+            <div class="card-3d p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
                     <span>🗺️</span> DATA & GIS
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Python</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">QGIS</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Leaflet.js</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Looker Studio</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Python</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">QGIS</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Leaflet.js</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Looker Studio</span>
                 </div>
             </div>
 
-            <div class="bg-[#280c1e]/70 border-2 border-pink-400/50 p-6 hover:border-pink-300 hover:-translate-y-2 transition duration-300 shadow-[4px_4px_0px_0px_#4a1236]" data-aos="fade-up" data-aos-delay="300">
-                <div class="font-pixel text-pink-300 text-sm mb-4 flex items-center gap-2">
+            <!-- SKILL CARD 3 -->
+            <div class="card-3d p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
                     <span>🛡️</span> IOT & SEC
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">ESP32 / C++</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Firebase</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Kali Linux</span>
-                    <span class="bg-[#3b122c] text-pink-200 px-2 py-1 border border-pink-500/60">Nmap</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">ESP32 / C++</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Firebase</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Kali Linux</span>
+                    <span class="badge-3d px-3 py-1.5 font-bold">Nmap</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- PROJECTS SECTION -->
+    <!-- PROJECTS SECTION (3D NYEMBUL + FADE IN/OUT SCROLL) -->
     <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3" data-aos="fade-right">
+        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3 scroll-reveal">
             <span>🏆</span> 03. QUEST & REPOSITORIES 🎀
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <!-- Repo 1 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 DATA & ANALYTICS</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">dashboard-pln-kalselteng1</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Dashboard analytics dan pemantauan data operasional PLN UID Kalselteng.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Dashboard analytics dan pemantauan data operasional PLN UID Kalselteng.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python</div>
@@ -239,12 +270,11 @@
                 </div>
             </div>
 
-            <!-- Repo 2 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 IOT & EMBEDDED</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">firebase-realtime</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Integrasi sistem IoT mikrokontroler dengan Firebase Realtime Database.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Integrasi sistem IoT mikrokontroler dengan Firebase Realtime Database.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">C++ • ESP32</div>
@@ -252,12 +282,11 @@
                 </div>
             </div>
 
-            <!-- Repo 3 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 MACHINE LEARNING</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">realtime-face-detection</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Proyek pengenalan dan pendeteksian wajah secara real-time berbasis OpenCV.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Proyek pengenalan dan pendeteksian wajah secara real-time berbasis OpenCV.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python • OpenCV</div>
@@ -265,12 +294,11 @@
                 </div>
             </div>
 
-            <!-- Repo 4 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 CYBER SECURITY</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">vulner-project</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Eksperimen simulasi dan pengujian kerentanan keamanan web aplikasi (Proyek UAS).</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Eksperimen simulasi dan pengujian kerentanan keamanan web aplikasi (Proyek UAS).</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Web Security</div>
@@ -278,12 +306,11 @@
                 </div>
             </div>
 
-            <!-- Repo 5 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">kampus-app</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Aplikasi pengelolaan data kampus berbasis framework Laravel.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Aplikasi pengelolaan data kampus berbasis framework Laravel.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Blade • Laravel • PHP</div>
@@ -291,12 +318,11 @@
                 </div>
             </div>
 
-            <!-- Repo 6 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">booking-class-simple-web</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Sistem aplikasi pemesanan dan peminjaman ruangan kelas berbasis web.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Sistem aplikasi pemesanan dan peminjaman ruangan kelas berbasis web.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • MySQL</div>
@@ -304,12 +330,11 @@
                 </div>
             </div>
 
-            <!-- Repo 7 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">library-simple-web</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Sistem informasi manajemen perpustakaan sederhana (Exam Project).</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Sistem informasi manajemen perpustakaan sederhana (Exam Project).</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Database</div>
@@ -317,12 +342,11 @@
                 </div>
             </div>
 
-            <!-- Repo 8 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 GAME DEV</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">bunny-game-RPG</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Eksperimen pembuatan game 3D berbasis Python.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Eksperimen pembuatan game 3D berbasis Python.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">Python • 3D Game</div>
@@ -330,12 +354,11 @@
                 </div>
             </div>
 
-            <!-- Repo 9 -->
-            <div class="bg-[#280c1e]/80 border-2 border-pink-400/50 p-5 flex flex-col justify-between hover:border-pink-300 hover:shadow-[6px_6px_0px_0px_#f472b6] transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 CREATIVE WEB</span>
                     <h3 class="text-base font-bold text-white mt-1 mb-2">birthday</h3>
-                    <p class="text-pink-200/70 text-xs mb-4">Proyek web ucapan ulang tahun interaktif.</p>
+                    <p class="text-pink-200/80 text-xs mb-4">Proyek web ucapan ulang tahun interaktif.</p>
                 </div>
                 <div>
                     <div class="text-[10px] font-mono text-pink-300 mb-3">CSS • HTML</div>
@@ -347,7 +370,7 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/60 scroll-mt-20" data-aos="zoom-in">
+    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/60 scroll-mt-20 scroll-reveal">
         <h2 class="font-pixel text-xl text-white mb-4">GAME OVER? LET'S TALK! 🎀💌</h2>
         <p class="text-pink-200/80 text-sm mb-8 max-w-lg mx-auto">
             Tertarik berkolaborasi atau sekadar mau menyapa? Silakan hubungi saya melalui media sosial di bawah ini!
@@ -364,21 +387,13 @@
         <p>© 2026 Dewi Oktovia Salehah 🎀 Built with HTML, Tailwind CSS & Soft Pixel Vibe.</p>
     </footer>
 
-    <!-- AOS (Animate On Scroll) JS & Loading Logic -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- INTERSECTION OBSERVER LOGIC (FADE IN & FADE OUT ON SCROLL) -->
     <script>
-        // Init Scroll Animation
-        AOS.init({
-            once: true,
-            duration: 800
-        });
-
-        // Loading Screen Logic
+        // 1. Loading Screen Logic
         window.addEventListener('load', () => {
             const bar = document.getElementById('loading-bar');
             const screen = document.getElementById('loading-screen');
             
-            // Simulasi progress bar meluncur halus
             bar.style.width = '100%';
             
             setTimeout(() => {
@@ -387,6 +402,30 @@
                     screen.style.display = 'none';
                 }, 700);
             }, 600);
+        });
+
+        // 2. Intersection Observer untuk Efek Fade In / Fade Out Bolak-Balik saat Scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Elemen mentransisi saat 15% bagiannya masuk/keluar viewport
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Pas elemen masuk ke dalam layar -> Fade In
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        // Pas elemen keluar layar (ke atas/ke bawah) -> Fade Out
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            revealElements.forEach(el => observer.observe(el));
         });
     </script>
 </body>
