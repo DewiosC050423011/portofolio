@@ -22,28 +22,28 @@
             background-image: 
                 radial-gradient(#4a1236 1px, transparent 1px), 
                 radial-gradient(#4a1236 1px, #1c0915 1px);
-            background-size: 32px 32px;
-            background-position: 0 0, 16px 16px;
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
         }
 
         /* Border Renda / Coquette Ribbon Style */
         .coquette-border {
             border: 4px solid #f472b6;
-            box-shadow: 6px 6px 0px 0px #831843, 12px 12px 0px 0px rgba(244, 114, 182, 0.2);
+            box-shadow: 4px 4px 0px 0px #831843, 8px 8px 0px 0px rgba(244, 114, 182, 0.2);
         }
 
         /* Floating Animation */
         @keyframes float {
             0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(3deg); }
+            50% { transform: translateY(-8px) rotate(3deg); }
         }
         .animate-float { animation: float 4s ease-in-out infinite; }
         .animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
 
         /* Petal & Ribbon Rain Animation */
         @keyframes fall {
-            0% { transform: translateY(-10vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.3; }
+            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.9; }
+            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.2; }
         }
         .petal {
             position: fixed;
@@ -57,13 +57,13 @@
         .card-3d {
             background-color: rgba(40, 12, 30, 0.9);
             border: 3px solid #f472b6;
-            box-shadow: 0px 8px 0px 0px #831843, 0px 12px 15px rgba(0,0,0,0.5);
+            box-shadow: 0px 6px 0px 0px #831843, 0px 10px 12px rgba(0,0,0,0.5);
             transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .card-3d:hover {
-            transform: translateY(-8px) scale(1.02) !important;
-            box-shadow: 0px 16px 0px 0px #be185d, 0px 20px 25px rgba(244, 114, 182, 0.3);
+        .card-3d:hover, .card-3d:active {
+            transform: translateY(-6px) scale(1.01) !important;
+            box-shadow: 0px 12px 0px 0px #be185d, 0px 15px 20px rgba(244, 114, 182, 0.25);
             border-color: #fbcfe8;
         }
 
@@ -72,12 +72,12 @@
             background-color: #3b122c;
             color: #fbcfe8;
             border: 2px solid #ec4899;
-            box-shadow: 2px 3px 0px 0px #831843;
+            box-shadow: 2px 2px 0px 0px #831843;
             transition: all 0.2s ease;
         }
 
-        .card-3d:hover .badge-3d {
-            box-shadow: 3px 4px 0px 0px #be185d;
+        .card-3d:hover .badge-3d, .card-3d:active .badge-3d {
+            box-shadow: 3px 3px 0px 0px #be185d;
             transform: translateY(-2px);
             background-color: #4c1d3d;
             border-color: #f472b6;
@@ -86,8 +86,8 @@
         /* CUSTOM SCROLL-DRIVEN ANIMATION (FADE IN & FADE OUT) */
         .scroll-reveal {
             opacity: 0;
-            transform: translateY(40px) scale(0.96);
-            transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(30px) scale(0.97);
+            transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
@@ -97,7 +97,7 @@
         }
 
         /* Custom Scrollbar Coquette */
-        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1c0915; }
         ::-webkit-scrollbar-thumb { background: #f472b6; }
         ::-webkit-scrollbar-thumb:hover { background: #fb7185; }
@@ -109,10 +109,10 @@
     <div id="loading-screen" class="fixed inset-0 z-50 bg-[#280c1e] flex flex-col items-center justify-center transition-opacity duration-700">
         <div class="text-center space-y-4 px-4">
             <div class="text-4xl md:text-5xl animate-bounce mb-2">🎀🌸🎮</div>
-            <h2 class="font-pixel text-pink-300 text-sm md:text-base tracking-widest animate-pulse">
+            <h2 class="font-pixel text-pink-300 text-xs md:text-base tracking-widest animate-pulse">
                 PLEASE WAIT...
             </h2>
-            <p class="font-pixel text-[10px] text-pink-400/80">LOADING DEWI'S WORLD</p>
+            <p class="font-pixel text-[9px] md:text-[10px] text-pink-400/80">LOADING DEWI'S WORLD</p>
             
             <!-- Progress Bar 8-bit -->
             <div class="w-48 md:w-64 h-5 bg-[#1c0915] border-2 border-pink-400 p-1 mx-auto relative overflow-hidden">
@@ -121,19 +121,26 @@
         </div>
     </div>
 
-    <!-- FLOATING PETALS & RIBBONS EFFECT -->
-    <div class="petal text-pink-400 text-sm" style="left: 8%; animation-duration: 7s;">🌸</div>
-    <div class="petal text-pink-300 text-xs" style="left: 22%; animation-duration: 9s; animation-delay: 2s;">🎀</div>
-    <div class="petal text-pink-400 text-base" style="left: 48%; animation-duration: 6s; animation-delay: 1s;">🌸</div>
-    <div class="petal text-rose-300 text-xs" style="left: 72%; animation-duration: 8s; animation-delay: 4s;">🎀</div>
-    <div class="petal text-pink-300 text-sm" style="left: 88%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
+    <!-- FLOATING PETALS EFFECT (DI-DRAFT SUPAYA NYAMAN DI HP) -->
+    <div class="petal text-pink-400 text-xs md:text-sm" style="left: 5%; animation-duration: 7s;">🌸</div>
+    <div class="petal text-pink-300 text-[10px] md:text-xs" style="left: 25%; animation-duration: 9s; animation-delay: 2s;">🎀</div>
+    <div class="petal text-pink-400 text-sm md:text-base" style="left: 50%; animation-duration: 6s; animation-delay: 1s;">🌸</div>
+    <div class="petal text-rose-300 text-[10px] md:text-xs" style="left: 75%; animation-duration: 8s; animation-delay: 4s;">🎀</div>
+    <div class="petal text-pink-300 text-xs md:text-sm" style="left: 90%; animation-duration: 10s; animation-delay: 3s;">🌸</div>
 
     <!-- NAVBAR -->
-    <nav class="fixed top-0 left-0 w-full bg-[#1c0915]/90 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <nav class="fixed top-0 left-0 w-full bg-[#1c0915]/95 backdrop-blur-md z-40 border-b-4 border-pink-500/50 py-3 px-4 md:px-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="#" class="font-pixel text-xs md:text-sm text-pink-300 hover:text-pink-200 transition tracking-wider flex items-center gap-2">
                 <span>🎀</span> DEWI.EXE <span class="animate-pulse">🌸</span>
             </a>
+            
+            <!-- Menu Tombol Mobile (Retro Button) -->
+            <button id="menu-btn" class="md:hidden font-pixel text-[10px] bg-[#3b122c] border-2 border-pink-400 text-pink-200 px-3 py-1.5 active:translate-y-0.5">
+                MENU 🎀
+            </button>
+
+            <!-- Navigasi Desktop -->
             <div class="hidden md:flex space-x-6 text-xs font-pixel text-pink-200">
                 <a href="#about" class="hover:text-pink-400 transition">▶ ABOUT</a>
                 <a href="#skills" class="hover:text-pink-400 transition">▶ SKILLS</a>
@@ -141,42 +148,50 @@
                 <a href="#contact" class="hover:text-pink-400 transition">▶ CONTACT</a>
             </div>
         </div>
+
+        <!-- Menu Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#280c1e] border-t-2 border-pink-500 mt-3 p-4 flex flex-col space-y-3 font-pixel text-xs text-pink-200">
+            <a href="#about" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ABOUT</a>
+            <a href="#skills" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ SKILLS</a>
+            <a href="#projects" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ WORK</a>
+            <a href="#contact" class="hover:text-pink-400 py-1">▶ CONTACT</a>
+        </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <section class="min-h-screen flex items-center pt-28 pb-16 px-6 max-w-6xl mx-auto scroll-mt-20">
-        <div class="grid md:grid-cols-2 gap-12 items-center w-full">
-            <div class="scroll-reveal">
-                <div class="inline-flex items-center gap-2 bg-[#3b122c] border-2 border-pink-400 px-3 py-1 rounded-none mb-4 shadow-[3px_3px_0px_0px_#f472b6]">
+    <section class="min-h-screen flex items-center pt-24 pb-12 px-4 md:px-6 max-w-6xl mx-auto scroll-mt-20">
+        <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center w-full">
+            <div class="scroll-reveal order-2 md:order-1">
+                <div class="inline-flex items-center gap-2 bg-[#3b122c] border-2 border-pink-400 px-2.5 py-1 rounded-none mb-3 shadow-[2px_2px_0px_0px_#f472b6]">
                     <span class="text-xs">🎀</span>
-                    <p class="font-pixel text-[10px] text-pink-200">PLAYER 1: READY ✨</p>
+                    <p class="font-pixel text-[9px] md:text-[10px] text-pink-200">PLAYER 1: READY ✨</p>
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-[2px_2px_0px_#831843]">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold text-white leading-tight mb-4 drop-shadow-[2px_2px_0px_#831843]">
                     Dewi Oktovia Salehah
                 </h1>
-                <p class="text-base text-pink-200/90 leading-relaxed mb-6 bg-[#280c1e]/80 p-4 border-l-4 border-pink-400 shadow-md">
+                <p class="text-sm md:text-base text-pink-200/90 leading-relaxed mb-6 bg-[#280c1e]/80 p-3.5 md:p-4 border-l-4 border-pink-400 shadow-md">
                     Mahasiswi Semester 7 <span class="text-pink-300 font-semibold">Sistem Informasi Kota Cerdas</span> di Politeknik Negeri Banjarmasin. Kadang suka mengulik <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Web GIS</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Data Analytics</span>, <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">IoT</span>, dan <span class="text-pink-300 underline underline-offset-4 decoration-pink-500">Cyber Security</span>! 🎀🎮
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#projects" class="font-pixel text-xs bg-pink-500 hover:bg-pink-400 text-slate-950 font-bold px-6 py-3 rounded-none border-b-4 border-r-4 border-pink-800 active:translate-y-1 transition flex items-center gap-2 shadow-lg">
+                <div class="flex flex-wrap gap-3 md:gap-4">
+                    <a href="#projects" class="font-pixel text-[10px] md:text-xs bg-pink-500 hover:bg-pink-400 text-slate-950 font-bold px-5 md:px-6 py-2.5 md:py-3 rounded-none border-b-4 border-r-4 border-pink-800 active:translate-y-1 transition flex items-center gap-2 shadow-lg">
                         <span>🎀</span> PRESS START 🚀
                     </a>
-                    <a href="#contact" class="font-pixel text-xs bg-[#280c1e] hover:bg-[#3b122c] text-pink-300 px-6 py-3 border-2 border-pink-400 transition flex items-center gap-2">
+                    <a href="#contact" class="font-pixel text-[10px] md:text-xs bg-[#280c1e] hover:bg-[#3b122c] text-pink-300 px-5 md:px-6 py-2.5 md:py-3 border-2 border-pink-400 transition flex items-center gap-2">
                         <span>✉️</span> TALK TO ME
                     </a>
                 </div>
             </div>
 
             <!-- FRAME FOTO INTERAKTIF 8-BIT COQUETTE -->
-            <div class="flex justify-center relative scroll-reveal">
-                <div class="absolute -top-7 -left-3 z-20 font-pixel text-xl animate-float">
-                    🎀<span class="text-[10px] bg-[#3b122c] border border-pink-400 px-2 py-0.5 text-pink-200 shadow-sm">Soft & Cute!</span>
+            <div class="flex justify-center relative scroll-reveal order-1 md:order-2 my-4 md:my-0">
+                <div class="absolute -top-6 -left-2 md:-top-7 md:-left-3 z-20 font-pixel text-base md:text-xl animate-float">
+                    🎀<span class="text-[9px] md:text-[10px] bg-[#3b122c] border border-pink-400 px-2 py-0.5 text-pink-200 shadow-sm">Soft & Cute!</span>
                 </div>
-                <div class="absolute -bottom-5 -right-3 z-20 font-pixel text-2xl animate-float-delayed">
+                <div class="absolute -bottom-4 -right-2 md:-bottom-5 md:-right-3 z-20 font-pixel text-xl md:text-2xl animate-float-delayed">
                     🌸🧸✨
                 </div>
 
-                <div class="relative w-64 h-64 md:w-72 md:h-72 p-3 bg-[#280c1e] coquette-border">
+                <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 p-2.5 md:p-3 bg-[#280c1e] coquette-border">
                     <div class="w-full h-full overflow-hidden border-2 border-pink-300 relative group">
                         <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-pink-500/10 pointer-events-none"></div>
@@ -187,11 +202,11 @@
     </section>
 
     <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-8 flex items-center gap-3 scroll-reveal">
+    <section id="about" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-6 md:mb-8 flex items-center gap-2 md:gap-3 scroll-reveal">
             <span>👾</span> 01. STATS & BIO 🎀
         </h2>
-        <div class="bg-[#280c1e]/90 border-2 border-pink-400/60 p-6 md:p-8 text-pink-100/90 leading-relaxed space-y-4 shadow-[6px_6px_0px_0px_#4a1236] scroll-reveal">
+        <div class="bg-[#280c1e]/90 border-2 border-pink-400/60 p-5 md:p-8 text-sm md:text-base text-pink-100/90 leading-relaxed space-y-4 shadow-[4px_4px_0px_0px_#4a1236] md:shadow-[6px_6px_0px_0px_#4a1236] scroll-reveal">
             <p>
                 Saya adalah mahasiswi Jurusan Teknik Elektro, 
                 Program Studi Sistem Informasi Kota Cerdas di Politeknik Negeri Banjarmasin 
@@ -202,166 +217,163 @@
         </div>
     </section>
 
-    <!-- SKILLS SECTION (EFEK 3D NYEMBUL + FADE IN/OUT SCROLL) -->
-    <section id="skills" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3 scroll-reveal">
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
             <span>⚡</span> 02. SKILL TREE 🎀
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             
-            <!-- SKILL CARD 1 -->
-            <div class="card-3d p-6 rounded-none scroll-reveal">
-                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
+            <div class="card-3d p-5 md:p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
                     <span>💻</span> WEB & APP
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="badge-3d px-3 py-1.5 font-bold">PHP</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Laravel</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Flutter</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">JavaScript</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">PHP</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Laravel</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Flutter</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">JavaScript</span>
                 </div>
             </div>
 
-            <!-- SKILL CARD 2 -->
-            <div class="card-3d p-6 rounded-none scroll-reveal">
-                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
+            <div class="card-3d p-5 md:p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
                     <span>🗺️</span> DATA & GIS
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="badge-3d px-3 py-1.5 font-bold">Python</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">QGIS</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Leaflet.js</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Looker Studio</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Python</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">QGIS</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Leaflet.js</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Looker Studio</span>
                 </div>
             </div>
 
-            <!-- SKILL CARD 3 -->
-            <div class="card-3d p-6 rounded-none scroll-reveal">
-                <div class="font-pixel text-pink-300 text-sm mb-5 flex items-center gap-2">
+            <div class="card-3d p-5 md:p-6 rounded-none scroll-reveal">
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
                     <span>🛡️</span> IOT & SEC
                 </div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="badge-3d px-3 py-1.5 font-bold">ESP32 / C++</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Firebase</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Kali Linux</span>
-                    <span class="badge-3d px-3 py-1.5 font-bold">Nmap</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">ESP32 / C++</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Firebase</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Kali Linux</span>
+                    <span class="badge-3d px-2.5 md:px-3 py-1 md:py-1.5 font-bold">Nmap</span>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <!-- PROJECTS SECTION (3D NYEMBUL + FADE IN/OUT SCROLL) -->
-    <section id="projects" class="py-20 px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
-        <h2 class="font-pixel text-lg md:text-xl text-pink-300 mb-10 flex items-center gap-3 scroll-reveal">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-4 border-dashed border-pink-900/60 scroll-mt-20">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
             <span>🏆</span> 03. QUEST & REPOSITORIES 🎀
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
             
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 DATA & ANALYTICS</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">dashboard-pln-kalselteng1</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">dashboard-pln-kalselteng1</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Dashboard analytics dan pemantauan data operasional PLN UID Kalselteng.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">Python</div>
                     <a href="https://github.com/DewiosC050423011/dashboard-pln-kalselteng1" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 IOT & EMBEDDED</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">firebase-realtime</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">firebase-realtime</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Integrasi sistem IoT mikrokontroler dengan Firebase Realtime Database.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">C++ • ESP32</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">C++ • ESP32</div>
                     <a href="https://github.com/DewiosC050423011/firebase-realtime" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 MACHINE LEARNING</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">realtime-face-detection</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">realtime-face-detection</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Proyek pengenalan dan pendeteksian wajah secara real-time berbasis OpenCV.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python • OpenCV</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">Python • OpenCV</div>
                     <a href="https://github.com/DewiosC050423011/realtime-face-detection" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 CYBER SECURITY</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">vulner-project</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">vulner-project</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Eksperimen simulasi dan pengujian kerentanan keamanan web aplikasi (Proyek UAS).</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Web Security</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">PHP • Web Security</div>
                     <a href="https://github.com/DewiosC050423011/vulner-project" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">kampus-app</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">kampus-app</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Aplikasi pengelolaan data kampus berbasis framework Laravel.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">Blade • Laravel • PHP</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">Blade • Laravel • PHP</div>
                     <a href="https://github.com/DewiosC050423011/kampus-app" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">booking-class-simple-web</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">booking-class-simple-web</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Sistem aplikasi pemesanan dan peminjaman ruangan kelas berbasis web.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • MySQL</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">PHP • MySQL</div>
                     <a href="https://github.com/DewiosC050423011/booking-class-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 WEB DEVELOPMENT</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">library-simple-web</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">library-simple-web</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Sistem informasi manajemen perpustakaan sederhana (Exam Project).</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">PHP • Database</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">PHP • Database</div>
                     <a href="https://github.com/DewiosC050423011/library-simple-web" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 GAME DEV</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">bunny-game-RPG</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">bunny-game-RPG</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Eksperimen pembuatan game 3D berbasis Python.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">Python • 3D Game</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">Python • 3D Game</div>
                     <a href="https://github.com/DewiosC050423011/bunny-game-RPG" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
 
-            <div class="card-3d p-5 flex flex-col justify-between scroll-reveal">
+            <div class="card-3d p-4 md:p-5 flex flex-col justify-between scroll-reveal">
                 <div>
                     <span class="font-pixel text-[9px] text-pink-300">🎀 CREATIVE WEB</span>
-                    <h3 class="text-base font-bold text-white mt-1 mb-2">birthday</h3>
+                    <h3 class="text-sm md:text-base font-bold text-white mt-1 mb-2">birthday</h3>
                     <p class="text-pink-200/80 text-xs mb-4">Proyek web ucapan ulang tahun interaktif.</p>
                 </div>
                 <div>
-                    <div class="text-[10px] font-mono text-pink-300 mb-3">CSS • HTML</div>
+                    <div class="text-[10px] font-mono text-pink-300 mb-2.5">CSS • HTML</div>
                     <a href="https://github.com/DewiosC050423011/birthday" target="_blank" class="font-pixel text-[9px] text-pink-400 hover:text-pink-200">VIEW REPO ▶</a>
                 </div>
             </div>
@@ -370,12 +382,12 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/60 scroll-mt-20 scroll-reveal">
-        <h2 class="font-pixel text-xl text-white mb-4">GAME OVER? LET'S TALK! 🎀💌</h2>
-        <p class="text-pink-200/80 text-sm mb-8 max-w-lg mx-auto">
+    <section id="contact" class="py-16 md:py-20 px-4 md:px-6 max-w-4xl mx-auto text-center border-t-4 border-dashed border-pink-900/60 scroll-mt-20 scroll-reveal">
+        <h2 class="font-pixel text-base md:text-xl text-white mb-4">GAME OVER? LET'S TALK! 🎀💌</h2>
+        <p class="text-pink-200/80 text-xs md:text-sm mb-6 md:mb-8 max-w-lg mx-auto">
             Tertarik berkolaborasi atau sekadar mau menyapa? Silakan hubungi saya melalui media sosial di bawah ini!
         </p>
-        <div class="flex justify-center gap-6 text-3xl mb-8">
+        <div class="flex justify-center gap-6 text-2xl md:text-3xl mb-8">
             <a href="https://github.com/DewiosC050423011" target="_blank" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-brands fa-github"></i></a>
             <a href="https://instagram.com/dewioss" target="_blank" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-brands fa-instagram"></i></a>
             <a href="mailto:dozxuk@gmail.com" class="text-pink-400 hover:text-pink-200 hover:scale-125 transition duration-200"><i class="fa-solid fa-envelope"></i></a>
@@ -383,11 +395,11 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-8 text-center text-xs text-pink-300/50 border-t-4 border-pink-950/60 bg-[#14060f]">
+    <footer class="py-6 md:py-8 text-center text-[10px] md:text-xs text-pink-300/50 border-t-4 border-pink-950/60 bg-[#14060f] px-4">
         <p>© 2026 Dewi Oktovia Salehah 🎀 Built with HTML, Tailwind CSS & Soft Pixel Vibe.</p>
     </footer>
 
-    <!-- INTERSECTION OBSERVER LOGIC (FADE IN & FADE OUT ON SCROLL) -->
+    <!-- JAVASCRIPT LOGIC (LOADING, MOBILE MENU, INTERSECTION OBSERVER) -->
     <script>
         // 1. Loading Screen Logic
         window.addEventListener('load', () => {
@@ -404,21 +416,34 @@
             }, 600);
         });
 
-        // 2. Intersection Observer untuk Efek Fade In / Fade Out Bolak-Balik saat Scroll
+        // 2. Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Tutup menu mobile otomatis pas link diklik
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // 3. Intersection Observer untuk Efek Fade In / Fade Out Scroll
         document.addEventListener('DOMContentLoaded', () => {
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.15 // Elemen mentransisi saat 15% bagiannya masuk/keluar viewport
+                threshold: 0.1
             };
 
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Pas elemen masuk ke dalam layar -> Fade In
                         entry.target.classList.add('is-visible');
                     } else {
-                        // Pas elemen keluar layar (ke atas/ke bawah) -> Fade Out
                         entry.target.classList.remove('is-visible');
                     }
                 });
