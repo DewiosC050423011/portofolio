@@ -220,3 +220,97 @@ body.light-mode .theme-switch-btn {
     color: white;
     border-color: #831843;
 }
+
+/* --- PERBAIKAN KONTRAS LIGHT MODE --- */
+body.light-mode .card-3d,
+body.light-mode section > div:not(.grid) {
+    background: linear-gradient(135deg, #ffe4e6, #fbcfe8) !important;
+    border-color: #f43f5e !important;
+    color: #500724 !important;
+}
+
+body.light-mode p, 
+body.light-mode span, 
+body.light-mode li {
+    color: #881337 !important;
+}
+
+body.light-mode .text-pink-100,
+body.light-mode .text-pink-200,
+body.light-mode .text-pink-300 {
+    color: #831843 !important;
+}
+
+/* --- FIX KOTAK BIO DI LIGHT MODE --- */
+body.light-mode .bg-\[\#280c1e\]\/70 {
+    background-color: rgba(255, 228, 230, 0.85) !important;
+    border-color: #f43f5e !important;
+}
+
+body.light-mode .bg-\[\#280c1e\]\/70 p {
+    color: #831843 !important;
+}
+
+/* --- FIX TOTAL KARTU PROYEK DI LIGHT MODE --- */
+body.light-mode .card-3d > div > div:first-child {
+    background-color: #ffe4e6 !important;
+    border-bottom-color: #f43f5e !important;
+}
+
+body.light-mode .card-3d img,
+body.light-mode .card-3d video {
+    opacity: 0.95;
+}
+
+/* --- ANIMASI MOTION IKON KONTAK SAAT DIKLIK/HOVER --- */
+#contact a i {
+    display: inline-block;
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
+}
+
+#contact a:hover i {
+    transform: translateY(-8px) scale(1.3) rotate(8deg);
+    color: #db2777 !important;
+}
+
+#contact a:active i {
+    transform: scale(0.9) rotate(-8deg);
+}
+
+/* --- PEMBERSIHAN TOTAL ELEMEN GELAP DI LIGHT MODE --- */
+body.light-mode #projects .card-3d > div > div:first-child {
+    background-color: #fbcfe8 !important;
+}
+
+body.light-mode #projects .card-3d span.absolute,
+body.light-mode #projects .card-3d .bg-pink-950\/90,
+body.light-mode #projects .card-3d .bg-pink-950\/80 {
+    background-color: #f43f5e !important;
+    color: #ffffff !important;
+    border-color: #831843 !important;
+}
+
+/* Tombol Gaming Universe di Hero Section */
+body.light-mode a[href="#gaming"] {
+    background-color: #ffe4e6 !important;
+    color: #831843 !important;
+    border-color: #f43f5e !important;
+}
+
+body.light-mode a[href="#gaming"]:hover {
+    background-color: #f43f5e !important;
+    color: #ffffff !important;
+}
+
+/* --- FIX BADGE KECIL "PLAYER 1" & "HOPELESS ROMANTIC" DI LIGHT MODE --- */
+body.light-mode .inline-flex.bg-\[\#3b122c\]\/80,
+body.light-mode div.absolute.animate-float span {
+    background-color: #ffe4e6 !important;
+    border-color: #f43f5e !important;
+    color: #831843 !important;
+}
+
+body.light-mode .inline-flex.bg-\[\#3b122c\]\/80 p,
+body.light-mode div.absolute.animate-float span {
+    color: #831843 !important;
+}
