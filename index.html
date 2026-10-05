@@ -12,97 +12,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <style>
-        .font-pixel { font-family: 'Press Start 2P', cursive; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        
-        /* Elegant Dark Rose Background Pattern */
-        .bg-dark-coquette {
-            background-color: #160713;
-            background-image: 
-                radial-gradient(rgba(244, 114, 182, 0.15) 1px, transparent 1px), 
-                radial-gradient(rgba(244, 114, 182, 0.08) 1px, #160713 1px);
-            background-size: 32px 32px;
-            background-position: 0 0, 16px 16px;
-        }
-
-        /* Border Rounding & Elegant Glass Style */
-        .coquette-border {
-            border: 3px solid #f472b6;
-            box-shadow: 0px 8px 24px rgba(244, 114, 182, 0.2), 0px 4px 0px 0px #831843;
-        }
-
-        /* Floating Animation */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(3deg); }
-        }
-        .animate-float { animation: float 4s ease-in-out infinite; }
-        .animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
-
-        /* Petal & Ribbon Rain Animation */
-        @keyframes fall {
-            0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.8; }
-            100% { transform: translateY(105vh) rotate(360deg); opacity: 0.15; }
-        }
-        .petal {
-            position: fixed;
-            top: -20px;
-            pointer-events: none;
-            z-index: 30;
-            animation: fall linear infinite;
-        }
-
-        /* EFEK 3D NYEMBUL BUNDAR & ELEGANT */
-        .card-3d {
-            background: linear-gradient(145deg, rgba(45, 15, 36, 0.85), rgba(25, 8, 20, 0.95));
-            border: 2px solid rgba(244, 114, 182, 0.4);
-            box-shadow: 0px 6px 0px 0px #831843, 0px 10px 20px rgba(0,0,0,0.4);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(8px);
-        }
-
-        .card-3d:hover, .card-3d:active {
-            transform: translateY(-8px) scale(1.015) !important;
-            box-shadow: 0px 12px 0px 0px #be185d, 0px 18px 30px rgba(244, 114, 182, 0.3);
-            border-color: #fbcfe8;
-        }
-
-        /* BADGE 3D ROUNDED */
-        .badge-3d {
-            background-color: rgba(59, 18, 44, 0.8);
-            color: #fbcfe8;
-            border: 1.5px solid #ec4899;
-            box-shadow: 2px 2px 0px 0px #831843;
-            transition: all 0.2s ease;
-        }
-
-        .card-3d:hover .badge-3d, .card-3d:active .badge-3d {
-            box-shadow: 3px 3px 0px 0px #be185d;
-            transform: translateY(-2px);
-            background-color: #4c1d3d;
-            border-color: #f472b6;
-        }
-
-        /* CUSTOM SCROLL-DRIVEN ANIMATION (FADE IN & FADE OUT) */
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(30px) scale(0.97);
-            transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
-        }
-
-        .scroll-reveal.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-
-        /* Custom Scrollbar Coquette */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #160713; }
-        ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 9999px; }
-        ::-webkit-scrollbar-thumb:hover { background: #fb7185; }
-    </style>
+    <!-- Hubungkan ke file CSS terpisah -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-dark-coquette text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
 
@@ -115,7 +26,6 @@
             </h2>
             <p class="font-pixel text-[9px] md:text-[10px] text-pink-400/80">LOADING DOZXUK_VERSE</p>
             
-            <!-- Progress Bar Rounded 8-bit -->
             <div class="w-48 md:w-64 h-5 bg-[#160713] border-2 border-pink-400 p-1 mx-auto relative overflow-hidden rounded-full">
                 <div id="loading-bar" class="h-full bg-gradient-to-r from-pink-500 to-rose-400 w-0 transition-all duration-300 ease-out rounded-full"></div>
             </div>
@@ -140,10 +50,11 @@
                 MENU 🎀
             </button>
 
-            <div class="hidden md:flex space-x-6 text-xs font-pixel text-pink-200">
+            <div class="hidden md:flex space-x-5 text-xs font-pixel text-pink-200">
                 <a href="#about" class="hover:text-pink-400 transition">▶ ABOUT</a>
                 <a href="#skills" class="hover:text-pink-400 transition">▶ SKILLS</a>
                 <a href="#projects" class="hover:text-pink-400 transition">▶ WORK</a>
+                <a href="#gaming" class="hover:text-pink-400 transition">▶ GAMING</a>
                 <a href="#contact" class="hover:text-pink-400 transition">▶ CONTACT</a>
             </div>
         </div>
@@ -152,6 +63,7 @@
             <a href="#about" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ABOUT</a>
             <a href="#skills" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ SKILLS</a>
             <a href="#projects" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ WORK</a>
+            <a href="#gaming" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ GAMING</a>
             <a href="#contact" class="hover:text-pink-400 py-1">▶ CONTACT</a>
         </div>
     </nav>
@@ -174,33 +86,27 @@
                     <a href="#projects" class="font-pixel text-[10px] md:text-xs bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-400 hover:to-rose-300 text-slate-950 font-bold px-6 py-3 rounded-full border-b-4 border-pink-800 active:translate-y-1 transition flex items-center gap-2 shadow-lg">
                         <span>🎀</span> PRESS START 🚀
                     </a>
-                    <a href="#contact" class="font-pixel text-[10px] md:text-xs bg-[#280c1e] hover:bg-[#3b122c] text-pink-300 px-6 py-3 rounded-full border-2 border-pink-400 transition flex items-center gap-2">
-                        <span>✉️</span> TALK TO ME
+                    <a href="#gaming" class="font-pixel text-[10px] md:text-xs bg-[#280c1e] hover:bg-[#3b122c] text-pink-300 px-6 py-3 rounded-full border-2 border-pink-400 transition flex items-center gap-2">
+                        <span>🎮</span> GAMING UNIVERSE
                     </a>
                 </div>
             </div>
 
-            <!-- FRAME FOTO INTERAKTIF BUNGA & BINTANG -->
+            <!-- FRAME FOTO INTERAKTIF -->
             <div class="flex justify-center relative scroll-reveal order-1 md:order-2 my-4 md:my-0">
                 <div class="absolute -top-7 -left-3 z-20 font-pixel text-base md:text-xl animate-float">
                     🎀<span class="text-[9px] md:text-[10px] bg-[#3b122c] border border-pink-400 px-2.5 py-1 text-pink-200 rounded-full shadow-md">Hopeless Romantic</span>
                 </div>
-                <div class="absolute -top-4 -right-3 z-20 font-pixel text-lg md:text-xl animate-pulse">
-                    ✨🌸
-                </div>
-                <div class="absolute -bottom-4 -left-3 z-20 font-pixel text-lg md:text-xl animate-bounce">
-                    🌸✨
-                </div>
-                <div class="absolute -bottom-5 -right-3 z-20 font-pixel text-xl md:text-2xl animate-float-delayed">
-                    🌸🧸✨
-                </div>
+                <div class="absolute -top-4 -right-3 z-20 font-pixel text-lg md:text-xl animate-pulse">✨🌸</div>
+                <div class="absolute -bottom-4 -left-3 z-20 font-pixel text-lg md:text-xl animate-bounce">🌸✨</div>
+                <div class="absolute -bottom-5 -right-3 z-20 font-pixel text-xl md:text-2xl animate-float-delayed">🌸🧸✨</div>
 
                 <div class="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 p-3 bg-gradient-to-b from-[#3b122c] to-[#1c0915] rounded-3xl coquette-border group">
                     <div class="absolute top-2 left-3 text-pink-300 text-xs animate-ping">✨</div>
                     <div class="absolute bottom-3 right-4 text-pink-300 text-xs animate-ping" style="animation-delay: 1s;">✨</div>
 
                     <div class="w-full h-full overflow-hidden rounded-2xl border-2 border-pink-300/80 relative">
-                        <img src="profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] group-hover:scale-110 transition duration-500">
+                        <img src="img/profile.jpg" alt="Dewi Oktovia Salehah" class="w-full h-full object-cover object-[center_top] group-hover:scale-110 transition duration-500">
                         <div class="absolute inset-0 bg-pink-500/10 pointer-events-none"></div>
                     </div>
                 </div>
@@ -231,9 +137,7 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div class="card-3d p-6 md:p-7 rounded-3xl scroll-reveal">
-                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
-                    <span>💻</span> WEB & APP
-                </div>
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2"><span>💻</span> WEB & APP</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">PHP</span>
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Laravel</span>
@@ -243,9 +147,7 @@
             </div>
 
             <div class="card-3d p-6 md:p-7 rounded-3xl scroll-reveal">
-                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
-                    <span>🗺️</span> DATA & GIS
-                </div>
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2"><span>🗺️</span> DATA & GIS</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Python</span>
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">QGIS</span>
@@ -255,9 +157,7 @@
             </div>
 
             <div class="card-3d p-6 md:p-7 rounded-3xl scroll-reveal">
-                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2">
-                    <span>🛡️</span> IOT & SEC
-                </div>
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2"><span>🛡️</span> IOT & SEC</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">ESP32 / C++</span>
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Firebase</span>
@@ -268,21 +168,20 @@
         </div>
     </section>
 
-    <!-- PROJECTS SECTION (13 PROYEK PRESISI SESUAI ADA/TIDAKNYA REPO) -->
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
         <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
             <span>🏆</span> 03. QUEST & REPOSITORIES 🎀
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
-            
-            <!-- 1. Kampusku App (ADA REPO) -->
+            <!-- 1. Kampusku App -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
                         <video class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" autoplay loop muted playsinline>
-                            <source src="kampusku vid ver.mp4" type="video/mp4">
-                            <img src="kampusku.png" alt="Kampus App Fallback">
+                            <source src="img/kampusku vid ver.mp4" type="video/mp4">
+                            <img src="img/kampusku.png" alt="Kampus App Fallback">
                         </video>
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">WEB APP</span>
                     </div>
@@ -298,11 +197,11 @@
                 </div>
             </div>
 
-            <!-- 2. Library Simple Web GEL (ADA REPO) -->
+            <!-- 2. Library Simple Web GEL -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="library.png" alt="Library Simple Web GEL" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/library.png" alt="Library Simple Web GEL" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">EXAM PROJECT</span>
                     </div>
                     <div class="p-5">
@@ -317,11 +216,11 @@
                 </div>
             </div>
 
-            <!-- 3. UI/UX Perpustakaan (TANPA REPO) -->
+            <!-- 3. UI/UX Perpustakaan -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="UIUX perpustakaan.png" alt="UIUX Perpustakaan" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/UIUX perpustakaan.png" alt="UIUX Perpustakaan" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">UI/UX DESIGN</span>
                     </div>
                     <div class="p-5">
@@ -336,11 +235,11 @@
                 </div>
             </div>
 
-            <!-- 4. Dashboard PLN (HTML Web Ver) (ADA REPO) -->
+            <!-- 4. Dashboard PLN (HTML Web Ver) -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="dashboard pln html ver.png" alt="Dashboard PLN HTML Ver" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/dashboard pln html ver.png" alt="Dashboard PLN HTML Ver" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">INTERNSHIP</span>
                     </div>
                     <div class="p-5">
@@ -355,11 +254,11 @@
                 </div>
             </div>
 
-            <!-- 5. Dashboard PLN (Looker Studio Ver) (TANPA REPO) -->
+            <!-- 5. Dashboard PLN (Looker Studio Ver) -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="dashboard looker version.png" alt="Dashboard PLN Looker Studio" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/dashboard looker version.png" alt="Dashboard PLN Looker Studio" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">LOOKER STUDIO</span>
                     </div>
                     <div class="p-5">
@@ -374,12 +273,12 @@
                 </div>
             </div>
 
-            <!-- 6. Project Sertifikasi JMP (Data Mahasiswa / Flutter) (TANPA REPO - ADA DEMO SHORTS) -->
+            <!-- 6. Project Sertifikasi JMP -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
                         <video class="w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay loop muted playsinline>
-                            <source src="project sertifikasi mobile programing.mp4" type="video/mp4">
+                            <source src="img/project sertifikasi mobile programing.mp4" type="video/mp4">
                         </video>
                         <span class="absolute top-2 right-2 bg-pink-500 text-slate-950 font-pixel text-[8px] px-2 py-1 rounded-full font-bold">FLUTTER</span>
                     </div>
@@ -397,11 +296,11 @@
                 </div>
             </div>
 
-            <!-- 7. Redesign Application NGL (TANPA REPO) -->
+            <!-- 7. Redesign Application NGL -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="redesign app NGL.png" alt="Redesign App NGL" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/redesign app NGL.png" alt="Redesign App NGL" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">REDESIGN</span>
                     </div>
                     <div class="p-5">
@@ -416,14 +315,12 @@
                 </div>
             </div>
 
-            <!-- 8. Pemberi Pakan Hewan Otomatis (TANPA REPO) -->
+            <!-- 8. Pemberi Pakan Hewan Otomatis -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
                         <video class="w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay loop muted playsinline>
-                            <source src="pemberi pakan hewan otomatis.mp4" type="video/mp4">
-                            <source src="upgrade uas iot.mp4" type="video/mp4">
-                            <source src="wireframe iot.mp4" type="video/mp4">
+                            <source src="img/pemberi pakan hewan otomatis.mp4" type="video/mp4">
                         </video>
                         <span class="absolute top-2 right-2 bg-pink-500 text-slate-950 font-pixel text-[8px] px-2 py-1 rounded-full font-bold">IOT HARDWARE</span>
                     </div>
@@ -439,11 +336,11 @@
                 </div>
             </div>
 
-            <!-- 9. Phishing Spotify (Vulner Project) (ADA REPO) -->
+            <!-- 9. Phishing Spotify -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="vulner.png" alt="Phishing Spotify Vulner Project" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/vulner.png" alt="Phishing Spotify Vulner Project" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-red-900/90 text-red-200 border border-red-500 text-[8px] font-pixel px-2 py-1 rounded-full">SECURITY LAB</span>
                     </div>
                     <div class="p-5">
@@ -458,11 +355,11 @@
                 </div>
             </div>
 
-            <!-- 10. Web GIS Banjarmasin (ADA REPO) -->
+            <!-- 10. Web GIS Banjarmasin -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="html x qgis.png" alt="Web GIS Flood Banjarmasin" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/html x qgis.png" alt="Web GIS Flood Banjarmasin" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">SMART CITY</span>
                     </div>
                     <div class="p-5">
@@ -477,11 +374,11 @@
                 </div>
             </div>
 
-            <!-- 11. Firebase Realtime IoT (ADA REPO) -->
+            <!-- 11. Firebase Realtime IoT -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
-                        <img src="deteksi suhu wokwi x firebase.png" alt="Firebase Realtime IoT" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
+                        <img src="img/deteksi suhu wokwi x firebase.png" alt="Firebase Realtime IoT" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500">
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">IOT LAB</span>
                     </div>
                     <div class="p-5">
@@ -496,12 +393,12 @@
                 </div>
             </div>
 
-            <!-- 12. Bunny Game RPG (ADA REPO) -->
+            <!-- 12. Bunny Game RPG -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
                         <video class="w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay loop muted playsinline>
-                            <source src="game simple.mp4" type="video/mp4">
+                            <source src="img/game simple.mp4" type="video/mp4">
                         </video>
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">GAME DEV</span>
                     </div>
@@ -517,13 +414,13 @@
                 </div>
             </div>
 
-            <!-- 13. Birthday Project (ADA REPO + LIVE PREVIEW WEB) -->
+            <!-- 13. Birthday Project -->
             <div class="card-3d rounded-3xl overflow-hidden flex flex-col justify-between scroll-reveal">
                 <div>
                     <div class="h-44 w-full overflow-hidden border-b-2 border-pink-500/30 relative group">
                         <video class="w-full h-full object-cover group-hover:scale-105 transition duration-500" autoplay loop muted playsinline>
-                            <source src="birthday project.mp4" type="video/mp4">
-                            <img src="birthday project.png" alt="Birthday Project Web">
+                            <source src="img/birthday project.mp4" type="video/mp4">
+                            <img src="img/birthday project.png" alt="Birthday Project Web">
                         </video>
                         <span class="absolute top-2 right-2 bg-pink-950/90 text-pink-300 border border-pink-400 text-[8px] font-pixel px-2 py-1 rounded-full">CREATIVE WEB</span>
                     </div>
@@ -544,6 +441,116 @@
         </div>
     </section>
 
+    <!-- GAMING UNIVERSE SECTION -->
+    <section id="gaming" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
+            <span>🎮</span> 04. GAMING UNIVERSE 🎀
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
+            <!-- Roblox -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Roblox" data-desc="isinya drama doang jir kalo ga ya bocil" data-img="img/roblox.jpeg" data-tag="Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/roblox.jpeg" alt="Roblox" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge active">🟢 Aktif</span>
+                    <h3 class="text-base font-bold text-white">Roblox</h3>
+                    <p class="text-pink-200/80 text-xs">isinya gabutan doang si.</p>
+                </div>
+            </div>
+
+            <!-- Growtopia -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Growtopia" data-desc="tiap bulan ada aja inflasinya, sering update tapi kaga ada yang di update selain IOTM kocag." data-img="img/growtopia.jpeg" data-tag="Semi Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/growtopia.jpeg" alt="Growtopia" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge semi">🟡 Semi Aktif</span>
+                    <h3 class="text-base font-bold text-white">Growtopia</h3>
+                    <p class="text-pink-200/80 text-xs">item lucu, liat harga ga masuk akal, gajadi beli, repeat.</p>
+                </div>
+            </div>
+
+            <!-- Free Fire -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Free Fire" data-desc="game burik auto aim kesayanganQ." data-img="img/freefire.jpeg" data-tag="Semi Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/freefire.jpeg" alt="Free Fire" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge semi">🟡 Semi Aktif</span>
+                    <h3 class="text-base font-bold text-white">Free Fire</h3>
+                    <p class="text-pink-200/80 text-xs">Kadang pro, kadang pro(blem).</p>
+                </div>
+            </div>
+
+            <!-- Mobile Legends -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Mobile Legends" data-desc="moontod tolong timnya jangan terlalu di anu anukan." data-img="img/mlbb.jpeg" data-tag="Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/mlbb.jpeg" alt="Mobile Legends" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge active">🟢 Aktif</span>
+                    <h3 class="text-base font-bold text-white">Mobile Legends</h3>
+                    <p class="text-pink-200/80 text-xs">Nyari mythic tapi sering dapet tim random.</p>
+                </div>
+            </div>
+
+            <!-- Magic Chess -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Magic Chess" data-desc="jujur stuck di epik." data-img="img/mcgg.jpeg" data-tag="Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/mcgg.jpeg" alt="Magic Chess" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge active">🟢 Aktif</span>
+                    <h3 class="text-base font-bold text-white">Magic Chess</h3>
+                    <p class="text-pink-200/80 text-xs">Tips sinergi yang bagus dong cik?</p>
+                </div>
+            </div>
+
+            <!-- COD -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="Call of Duty" data-desc="udah deadgame jir" data-img="img/cod.jpeg" data-tag="Non Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md">
+                    <img src="img/cod.jpeg" alt="Call of Duty" class="w-full h-full object-cover">
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge inactive">🔴 Non Aktif</span>
+                    <h3 class="text-base font-bold text-white">Call of Duty</h3>
+                    <p class="text-pink-200/80 text-xs">dari segi skin ama char menang sih, tapi masih better pubg</p>
+                </div>
+            </div>
+
+            <!-- PUBG -->
+            <div class="card-3d game-card p-5 rounded-3xl flex items-center gap-4 cursor-pointer" data-game="PUBG Mobile" data-desc="Planga plongo tau-tau mati di sniper." data-img="" data-tag="Non Aktif">
+                <div class="w-20 h-20 min-w-[80px] rounded-2xl overflow-hidden border-2 border-pink-400 shadow-md bg-pink-950/40 flex items-center justify-center">
+                    <span class="text-3xl">🪂</span>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                    <span class="status-badge inactive">🔴 Non Aktif</span>
+                    <h3 class="text-base font-bold text-white">PUBG Mobile</h3>
+                    <p class="text-pink-200/80 text-xs">bro trauma ketemu musuh spek jiggle cina.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL / PREVIEW FOTO BESAR & INTERAKTIF -->
+    <div id="gameModal" class="fixed inset-0 z-50 bg-[#05060a]/88 backdrop-blur-md hidden justify-center items-center p-4">
+        <div class="card-content card-3d p-6 sm:p-8 rounded-3xl max-w-md w-full text-center relative">
+            <span class="close-btn absolute top-4 right-5 text-2xl text-pink-300 hover:text-white cursor-pointer">&times;</span>
+            <div id="modalBadge" class="status-badge active mb-4 inline-block">Status</div>
+            <div class="w-36 h-36 mx-auto mb-5 rounded-2xl overflow-hidden border-4 border-pink-400 shadow-lg bg-black">
+                <img id="modalImg" src="" alt="Preview Game" class="w-full h-full object-cover">
+                <div id="modalEmojiContainer" class="hidden text-6xl flex items-center justify-center h-full">🪂</div>
+            </div>
+            <h2 id="modalTitle" class="text-xl font-bold text-white mb-2">Judul Game</h2>
+            <p id="modalDesc" class="text-pink-200/90 text-sm mb-6 leading-relaxed">Deskripsi game...</p>
+            <button id="actionGameBtn" class="w-full font-pixel text-xs bg-gradient-to-r from-pink-500 to-rose-400 text-slate-950 font-bold py-3 rounded-xl shadow-md hover:scale-105 transition">
+                🎮 SKUY MABAR!
+            </button>
+        </div>
+    </div>
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-16 md:py-20 px-4 md:px-6 max-w-4xl mx-auto text-center border-t-2 border-dashed border-pink-900/50 scroll-mt-24 scroll-reveal">
         <h2 class="font-pixel text-base md:text-xl text-white mb-4">GAME OVER? LET'S TALK! 🎀💌</h2>
@@ -562,58 +569,7 @@
         <p>© 2026 Dewi Oktovia Salehah 🎀 Built with HTML, Tailwind CSS & Soft Pixel Vibe.</p>
     </footer>
 
-    <!-- JAVASCRIPT LOGIC -->
-    <script>
-        // 1. Loading Screen Logic
-        window.addEventListener('load', () => {
-            const bar = document.getElementById('loading-bar');
-            const screen = document.getElementById('loading-screen');
-            
-            bar.style.width = '100%';
-            
-            setTimeout(() => {
-                screen.style.opacity = '0';
-                setTimeout(() => {
-                    screen.style.display = 'none';
-                }, 700);
-            }, 600);
-        });
-
-        // 2. Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // 3. Intersection Observer untuk Efek Fade In / Fade Out Scroll
-        document.addEventListener('DOMContentLoaded', () => {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                    } else {
-                        entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, observerOptions);
-
-            const revealElements = document.querySelectorAll('.scroll-reveal');
-            revealElements.forEach(el => observer.observe(el));
-        });
-    </script>
+    <!-- Hubungkan ke file JavaScript terpisah -->
+    <script src="script.js"></script>
 </body>
 </html>

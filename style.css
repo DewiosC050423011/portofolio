@@ -1,0 +1,115 @@
+/* CSS Terpisah: Gaya Portofolio & Gaming Hub */
+.font-pixel { font-family: 'Press Start 2P', cursive; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; }
+
+/* Elegant Dark Rose Background Pattern */
+.bg-dark-coquette {
+    background-color: #160713;
+    background-image: 
+        radial-gradient(rgba(244, 114, 182, 0.15) 1px, transparent 1px), 
+        radial-gradient(rgba(244, 114, 182, 0.08) 1px, #160713 1px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+}
+
+/* Border Rounding & Elegant Glass Style */
+.coquette-border {
+    border: 3px solid #f472b6;
+    box-shadow: 0px 8px 24px rgba(244, 114, 182, 0.2), 0px 4px 0px 0px #831843;
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-8px) rotate(3deg); }
+}
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-float-delayed { animation: float 5s ease-in-out 2s infinite; }
+
+/* Petal & Ribbon Rain Animation */
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); opacity: 0.8; }
+    100% { transform: translateY(105vh) rotate(360deg); opacity: 0.15; }
+}
+.petal {
+    position: fixed;
+    top: -20px;
+    pointer-events: none;
+    z-index: 30;
+    animation: fall linear infinite;
+}
+
+/* EFEK 3D NYEMBUL BUNDAR & ELEGANT */
+.card-3d {
+    background: linear-gradient(145deg, rgba(45, 15, 36, 0.85), rgba(25, 8, 20, 0.95));
+    border: 2px solid rgba(244, 114, 182, 0.4);
+    box-shadow: 0px 6px 0px 0px #831843, 0px 10px 20px rgba(0,0,0,0.4);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(8px);
+}
+
+.card-3d:hover, .card-3d:active {
+    transform: translateY(-8px) scale(1.015) !important;
+    box-shadow: 0px 12px 0px 0px #be185d, 0px 18px 30px rgba(244, 114, 182, 0.3);
+    border-color: #fbcfe8;
+}
+
+/* BADGE 3D ROUNDED */
+.badge-3d {
+    background-color: rgba(59, 18, 44, 0.8);
+    color: #fbcfe8;
+    border: 1.5px solid #ec4899;
+    box-shadow: 2px 2px 0px 0px #831843;
+    transition: all 0.2s ease;
+}
+
+.card-3d:hover .badge-3d, .card-3d:active .badge-3d {
+    box-shadow: 3px 3px 0px 0px #be185d;
+    transform: translateY(-2px);
+    background-color: #4c1d3d;
+    border-color: #f472b6;
+}
+
+/* STYLING GAMING HUB STATUS BADGE */
+.status-badge {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 20px;
+    width: fit-content;
+    letter-spacing: 0.3px;
+}
+.status-badge.active {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+.status-badge.semi {
+    background: rgba(234, 179, 8, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(234, 179, 8, 0.3);
+}
+.status-badge.inactive {
+    background: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* CUSTOM SCROLL-DRIVEN ANIMATION */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    transition: opacity 0.5s ease-out, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* Custom Scrollbar Coquette */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #160713; }
+::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #fb7185; }
