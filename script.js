@@ -50,7 +50,6 @@ function revealElements() {
         const elementTop = element.getBoundingClientRect().top;
         if (elementTop < windowHeight - revealPoint) {
             element.classList.add('active');
-            // Tambahan kelas style langsung via JS untuk memastikan transisi mulus
             element.style.opacity = '1';
             element.style.transform = 'translateY(0)';
         }
@@ -65,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         element.style.transform = 'translateY(30px)';
         element.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
     });
-    revealElements(); // Cek posisi awal
+    revealElements();
 });
 
 // 4. GAMING UNIVERSE MODAL INTERACTIVE
@@ -89,7 +88,6 @@ gameCards.forEach(card => {
         modalDesc.textContent = desc;
         modalBadge.textContent = tag;
 
-        // Cek apakah game punya gambar atau pakai emoji cadangan
         if (imgSrc && imgSrc !== "") {
             modalImg.src = imgSrc;
             modalImg.classList.remove('hidden');
@@ -99,13 +97,11 @@ gameCards.forEach(card => {
             if (modalEmojiContainer) modalEmojiContainer.classList.remove('hidden');
         }
 
-        // Tampilkan modal
         gameModal.classList.remove('hidden');
         gameModal.classList.add('flex');
     });
 });
 
-// Tutup modal saat tombol silang (&times;) diklik
 if (closeBtn) {
     closeBtn.addEventListener('click', () => {
         gameModal.classList.add('hidden');
@@ -113,7 +109,6 @@ if (closeBtn) {
     });
 }
 
-// Tutup modal saat area luar kotak modal diklik
 window.addEventListener('click', (e) => {
     if (e.target === gameModal) {
         gameModal.classList.add('hidden');
@@ -136,3 +131,41 @@ if (themeToggleBtn) {
         }
     });
 }
+
+// 6. TRIGGER ANIMASI GRAFIK & CIRCLE CHART SAAT DI-SCROLL
+const observerOptions = {
+    root: null,
+    threshold: 0.2
+};
+
+const statsObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Trigger Line Chart
+            const lines = entry.target.querySelectorAll('.stats-line');
+            lines.forEach(line => {
+                line.style.animation = 'none';
+                line.offsetHeight; // Trigger reflow
+                line.style.animation = 'draw-line 2.5s ease-in-out infinite alternate';
+            });
+
+            // Trigger Circle Chart Segments
+            const segments = entry.target.querySelectorAll('.chart-segment');
+            segments.forEach(seg => {
+                const percent = seg.getAttribute('data-percent');
+                if (percent) {
+                    seg.style.transition = 'stroke-dasharray 1.5s cubic-bezier(0.16, 1, 0.3, 1)';
+                    seg.style.strokeDasharray = `${percent}, 100`;
+                }
+            });
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const statsSection = document.getElementById('stats');
+    const orgSection = document.getElementById('organization');
+    
+    if (statsSection) statsObserver.observe(statsSection);
+    if (orgSection) statsObserver.observe(orgSection);
+});

@@ -59,6 +59,8 @@
 
             <div class="hidden md:flex space-x-5 text-xs font-pixel text-pink-200">
                 <a href="#about" class="hover:text-pink-400 transition">▶ ABOUT</a>
+                <a href="#stats" class="hover:text-pink-400 transition">▶ STATS</a>
+                <a href="#organization" class="hover:text-pink-400 transition">▶ ORG</a>
                 <a href="#skills" class="hover:text-pink-400 transition">▶ SKILLS</a>
                 <a href="#projects" class="hover:text-pink-400 transition">▶ WORK</a>
                 <a href="#gaming" class="hover:text-pink-400 transition">▶ GAMING</a>
@@ -68,6 +70,8 @@
 
         <div id="mobile-menu" class="hidden md:hidden bg-[#280c1e]/95 border-2 border-pink-500/40 rounded-2xl mt-3 p-4 flex flex-col space-y-3 font-pixel text-xs text-pink-200 shadow-xl">
             <a href="#about" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ABOUT</a>
+            <a href="#stats" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ STATS</a>
+            <a href="#organization" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ORG</a>
             <a href="#skills" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ SKILLS</a>
             <a href="#projects" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ WORK</a>
             <a href="#gaming" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ GAMING</a>
@@ -137,10 +141,75 @@
         </div>
     </section>
 
+    <!-- 02. STATS & ACHIEVEMENTS HUB (AKADEMIK, GAME, ORGANISASI) -->
+    <section id="stats" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
+            <span>📊</span> 02. PLAYER STATS & METRICS 🎀
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 scroll-reveal">
+            <!-- Akademik Stats -->
+            <div class="card-3d p-6 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <div class="font-pixel text-xs text-pink-300 mb-3">🎓 AKADEMIK SIKC</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">Semester 7</div>
+                    <p class="text-pink-200/80 text-xs leading-relaxed">Politeknik Negeri Banjarmasin • Fokus Smart City & Pengembangan Sistem.</p>
+                </div>
+                <!-- Animasi Line Chart SVG -->
+                <div class="my-3 h-10 w-full relative">
+                    <svg class="w-full h-full overflow-visible" viewBox="0 0 100 30">
+                        <path class="stats-line" d="M0,25 Q25,5 50,15 T100,5" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="pt-3 border-t border-pink-900/40 flex justify-between text-[11px] font-mono text-pink-300">
+                    <span>Status: Aktif</span>
+                    <span>IT Engineer Track</span>
+                </div>
+            </div>
+
+            <!-- Gaming Stats -->
+            <div class="card-3d p-6 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <div class="font-pixel text-xs text-pink-300 mb-3">🎮 GAMING UNIVERSE</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">Mythic / Epic</div>
+                    <p class="text-pink-200/80 text-xs leading-relaxed">Aktif mabar Mobile Legends, Magic Chess, Roblox, hingga casual runner.</p>
+                </div>
+                <!-- Animasi Line Chart SVG -->
+                <div class="my-3 h-10 w-full relative">
+                    <svg class="w-full h-full overflow-visible" viewBox="0 0 100 30">
+                        <path class="stats-line" d="M0,20 Q20,28 50,10 T100,18" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="pt-3 border-t border-pink-900/40 flex justify-between text-[11px] font-mono text-pink-300">
+                    <span>Vibe: Non-Formal</span>
+                    <span>SKUY MABAR</span>
+                </div>
+            </div>
+
+            <!-- Organisasi Stats -->
+            <div class="card-3d p-6 rounded-3xl flex flex-col justify-between relative overflow-hidden">
+                <div>
+                    <div class="font-pixel text-xs text-pink-300 mb-3">🏛️ ORGANIZATIONAL</div>
+                    <div class="text-3xl font-extrabold text-white mb-2">Ex-Leader</div>
+                    <p class="text-pink-200/80 text-xs leading-relaxed">Berpengalaman memimpin organisasi mahasiswa jurnalistik & kepengurusan kampus.</p>
+                </div>
+                <!-- Animasi Line Chart SVG -->
+                <div class="my-3 h-10 w-full relative">
+                    <svg class="w-full h-full overflow-visible" viewBox="0 0 100 30">
+                        <path class="stats-line" d="M0,15 Q30,2 60,20 T100,8" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div class="pt-3 border-t border-pink-900/40 flex justify-between text-[11px] font-mono text-pink-300">
+                    <span>UKM LPM Lensa</span>
+                    <span>2025/2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- SKILLS SECTION -->
     <section id="skills" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
         <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
-            <span>⚡</span> 02. SKILL TREE 🎀
+            <span>⚡</span> 03. SKILL TREE 🎀
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             <div class="card-3d p-6 md:p-7 rounded-3xl scroll-reveal">
@@ -164,12 +233,79 @@
             </div>
 
             <div class="card-3d p-6 md:p-7 rounded-3xl scroll-reveal">
-                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2"><span>🛡️</span> IOT & SEC</div>
+                <div class="font-pixel text-pink-300 text-xs md:text-sm mb-4 md:mb-5 flex items-center gap-2"><span>📸</span> CREATIVE & SEC</div>
                 <div class="flex flex-wrap gap-2 text-xs font-mono">
-                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">ESP32 / C++</span>
-                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Firebase</span>
+                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Photography</span>
+                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Visual Design</span>
                     <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Kali Linux</span>
-                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">Nmap</span>
+                    <span class="badge-3d px-3 py-1.5 rounded-full font-bold">ESP32 / IoT</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 04. EDUCATIONAL & ORG JOURNEY (RIWAYAT JABATAN & DONUT CHART) -->
+    <section id="organization" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
+            <span>🏛️</span> 04. EDUCATIONAL & ORG JOURNEY 🎀
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-reveal mb-12">
+            <!-- Jejak Organisasi SMAN 1 Banjarbaru & Poliban -->
+            <div class="card-3d p-6 md:p-8 rounded-3xl relative overflow-hidden flex flex-col justify-between">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-300">SMAN 1 BANJARBARU & POLIBAN</span>
+                    <h3 class="text-lg font-bold text-white mt-1 mb-4">Riwayat Organisasi & Sekolah</h3>
+                    
+                    <!-- Milestone SMA -->
+                    <div class="mb-5 pl-4 border-l-2 border-pink-400 relative">
+                        <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-pink-400"></div>
+                        <span class="text-[10px] font-mono text-pink-300">Masa SMA (SMAN 1 Banjarbaru)</span>
+                        <h4 class="text-sm font-bold text-white">OSIS & Koordinator MPK 5</h4>
+                        <p class="text-pink-200/80 text-xs mt-1">Mengampu Sekbid 9 (Dokumentasi) & Sekbid 6 (Koperasi Sekolah). Pernah mewakili Kota Banjarbaru dalam Lomba Fotografi Tingkat Provinsi!</p>
+                    </div>
+
+                    <!-- Milestone Poliban - Litbang -->
+                    <div class="mb-5 pl-4 border-l-2 border-rose-400 relative">
+                        <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-rose-400"></div>
+                        <span class="text-[10px] font-mono text-rose-300">Politeknik Negeri Banjarmasin (Periode 1)</span>
+                        <h4 class="text-sm font-bold text-white">Anggota Divisi Litbang UKM LPM Lensa</h4>
+                        <p class="text-pink-200/80 text-xs mt-1">Aktif meriset isu, data jurnalistik, dan strategi riset media mahasiswa.</p>
+                    </div>
+
+                    <!-- Milestone Poliban - Ketum -->
+                    <div class="pl-4 border-l-2 border-purple-400 relative">
+                        <div class="absolute -left-[7px] top-1 w-3 h-3 rounded-full bg-purple-400 animate-ping"></div>
+                        <span class="text-[10px] font-mono text-purple-300">Politeknik Negeri Banjarmasin (Periode 2)</span>
+                        <h4 class="text-sm font-bold text-white">Pimpinan Umum (Ketum) UKM LPM Lensa</h4>
+                        <p class="text-pink-200/80 text-xs mt-1">Periode 2025/2026 (Selesai Menjabat Februari 2026).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Circle Chart Persentase Aktivitas (Animasi Donut Chart Interaktif) -->
+            <div class="card-3d p-6 md:p-8 rounded-3xl flex flex-col items-center justify-center text-center">
+                <h3 class="font-pixel text-xs md:text-sm text-pink-300 mb-6">ACTIVITY TIME DISTRIBUTION</h3>
+                
+                <!-- SVG Donut Chart dengan Animasi Interaktif Scroll -->
+                <div class="relative w-40 h-40 flex items-center justify-center mb-6">
+                    <svg id="donutChart" class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                        <path class="text-pink-950/40" stroke-width="3.8" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                        <path class="chart-segment text-pink-400" stroke-dasharray="0, 100" stroke-width="3.8" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" data-percent="40"/>
+                        <path class="chart-segment text-rose-400" stroke-dasharray="0, 100" stroke-dashoffset="-40" stroke-width="3.8" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" data-percent="35"/>
+                        <path class="chart-segment text-purple-400" stroke-dasharray="0, 100" stroke-dashoffset="-75" stroke-width="3.8" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" data-percent="25"/>
+                    </svg>
+                    <div class="absolute flex flex-col items-center justify-center font-pixel text-[10px] text-pink-200 pointer-events-none">
+                        <span>BALANCE</span>
+                        <span class="text-xs text-white mt-1">100%</span>
+                    </div>
+                </div>
+
+                <!-- Keterangan Legend Chart (Grid Rapih Tanpa Tumpuk) -->
+                <div class="grid grid-cols-3 gap-2 w-full text-[11px] font-mono mt-2 pt-4 border-t border-pink-900/40">
+                    <div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-pink-400 mb-1"></span><span>Akademik (40%)</span></div>
+                    <div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-rose-400 mb-1"></span><span>Organisasi (35%)</span></div>
+                    <div class="flex flex-col items-center"><span class="w-3 h-3 rounded-full bg-purple-400 mb-1"></span><span>Gaming (25%)</span></div>
                 </div>
             </div>
         </div>
@@ -178,7 +314,7 @@
     <!-- PROJECTS SECTION -->
     <section id="projects" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
         <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
-            <span>🏆</span> 03. QUEST & REPOSITORIES 🎀
+            <span>🏆</span> 05. QUEST & REPOSITORIES 🎀
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7">
@@ -451,7 +587,7 @@
     <!-- GAMING UNIVERSE SECTION -->
     <section id="gaming" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
         <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
-            <span>🎮</span> 04. GAMING UNIVERSE 🎀
+            <span>🎮</span> 06. GAMING UNIVERSE 🎀
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
