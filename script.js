@@ -121,3 +121,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const revealElements = document.querySelectorAll('.scroll-reveal');
     revealElements.forEach(el => observer.observe(el));
 });
+
+// 5. Light Mode & Dark Mode Switcher
+const themeToggleBtn = document.getElementById('theme-toggle');
+const bodyElement = document.body;
+
+if (themeToggleBtn) {
+    themeToggleBtn.addEventListener('click', () => {
+        bodyElement.classList.toggle('light-mode');
+        
+        if (bodyElement.classList.contains('light-mode')) {
+            themeToggleBtn.innerHTML = '🌙 DARK';
+        } else {
+            themeToggleBtn.innerHTML = '☀️ LIGHT';
+        }
+    });
+}

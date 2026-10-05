@@ -113,3 +113,110 @@ body { font-family: 'Plus Jakarta Sans', sans-serif; }
 ::-webkit-scrollbar-track { background: #160713; }
 ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #fb7185; }
+
+/* --- VIBE GAMING ZONE KHUSUS DI BAGIAN BAWAH --- */
+#gaming {
+    position: relative;
+}
+
+/* Judul Gaming Hub ala Game Lobby */
+#gaming h2 {
+    text-shadow: 0 0 15px rgba(244, 114, 182, 0.6);
+    letter-spacing: 1px;
+}
+
+/* Kartu Game dengan Sentuhan Neon & RGB tipis ala Gaming Setup */
+.game-card {
+    background: linear-gradient(135deg, rgba(30, 10, 25, 0.95), rgba(15, 5, 12, 0.98)) !important;
+    border: 2px solid rgba(244, 114, 182, 0.3) !important;
+    transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+    position: relative;
+}
+
+/* Efek nyala lampu neon tipis pas kursor diarahin ke kartu game */
+.game-card:hover {
+    border-color: #f472b6 !important;
+    box-shadow: 0 0 25px rgba(244, 114, 182, 0.4), 0 8px 0px 0px #831843 !important;
+    transform: translateY(-6px) scale(1.02) !important;
+}
+
+/* Efek gambar profil game di dalam kartu */
+.game-card img {
+    filter: saturate(1.1) contrast(1.05);
+}
+
+/* Kotak Modal Popup ala Game Pop-up Menu */
+#gameModal .card-content {
+    background: linear-gradient(135deg, #1f0b1a, #0d030b) !important;
+    border: 3px solid #f472b6 !important;
+    box-shadow: 0 0 30px rgba(244, 114, 182, 0.5), 0 10px 0px 0px #831843 !important;
+}
+
+/* --- TEMA LIGHT MODE (Gaya Coquette Terang & Estetik) --- */
+body.light-mode {
+    background-color: #fff1f2 !important; /* Pink pastel sangat soft */
+    background-image: 
+        radial-gradient(rgba(244, 114, 182, 0.2) 1px, transparent 1px), 
+        radial-gradient(rgba(244, 114, 182, 0.1) 1px, #fff1f2 1px) !important;
+    color: #831843 !important;
+}
+
+/* Navbar jadi terang */
+body.light-mode nav {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    border-color: #f472b6 !important;
+}
+
+body.light-mode nav a, 
+body.light-mode nav button {
+    color: #9d174d !important;
+}
+
+/* Kotak Kartu 3D di Light Mode */
+body.light-mode .card-3d {
+    background: linear-gradient(145deg, rgba(255, 228, 230, 0.9), rgba(255, 241, 242, 0.95)) !important;
+    border: 2px solid #f472b6 !important;
+    box-shadow: 0px 6px 0px 0px #f43f5e, 0px 10px 20px rgba(244, 114, 182, 0.3) !important;
+    color: #500724 !important;
+}
+
+body.light-mode .card-3d h3,
+body.light-mode h1,
+body.light-mode h2 {
+    color: #500724 !important;
+}
+
+body.light-mode p {
+    color: #881337 !important;
+}
+
+/* Badge di Light Mode */
+body.light-mode .badge-3d {
+    background-color: #ffe4e6 !important;
+    color: #831843 !important;
+    border-color: #f43f5e !important;
+    box-shadow: 2px 2px 0px 0px #f43f5e !important;
+}
+
+/* Layar Loading jadi soft */
+body.light-mode #loading-screen {
+    background-color: #ffe4e6 !important;
+}
+
+/* Tombol Switcher Mode di Navbar */
+.theme-switch-btn {
+    background: #3b122c;
+    color: #fbcfe8;
+    border: 1.5px solid #ec4899;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    cursor: pointer;
+    font-size: 0.75rem;
+    transition: all 0.2s ease;
+}
+
+body.light-mode .theme-switch-btn {
+    background: #f43f5e;
+    color: white;
+    border-color: #831843;
+}
