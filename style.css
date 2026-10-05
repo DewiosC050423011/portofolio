@@ -314,3 +314,181 @@ body.light-mode .inline-flex.bg-\[\#3b122c\]\/80 p,
 body.light-mode div.absolute.animate-float span {
     color: #831843 !important;
 }
+
+/* --- FIX MODAL GAME DI LIGHT MODE --- */
+body.light-mode #gameModal .card-content {
+    background: linear-gradient(135deg, #ffe4e6, #fbcfe8) !important;
+    border-color: #f43f5e !important;
+    color: #500724 !important;
+}
+
+body.light-mode #gameModal h2,
+body.light-mode #gameModal p {
+    color: #831843 !important;
+}
+
+/* --- KONTRAS WARNA BADGE STATUS GAME DI LIGHT MODE --- */
+body.light-mode .status-badge.active,
+body.light-mode span.status-badge.active {
+    background-color: #d1fae5 !important;
+    color: #065f46 !important; /* Dark Green yang kontras */
+    border: 1px solid #10b981 !important;
+}
+
+body.light-mode .status-badge.semi,
+body.light-mode span.status-badge.semi {
+    background-color: #ffedd5 !important;
+    color: #9a3412 !important; /* Orange gelap yang kontras */
+    border: 1px solid #f97316 !important;
+}
+
+body.light-mode .status-badge.inactive,
+body.light-mode span.status-badge.inactive {
+    background-color: #fee2e2 !important;
+    color: #991b1b !important; /* Red gelap yang kontras */
+    border: 1px solid #ef4444 !important;
+}
+
+/* --- OTOMATIS MENYESUAIKAN WARNA BADGE STATUS (LIGHT & DARK MODE) --- */
+
+/* 1. Status Aktif */
+.status-badge.active, span.status-badge.active {
+    background-color: rgba(6, 95, 70, 0.4);
+    color: #34d399; /* Terang untuk Dark Mode */
+    border: 1px solid #10b981;
+}
+body.light-mode .status-badge.active, 
+body.light-mode span.status-badge.active {
+    background-color: #d1fae5;
+    color: #065f46 !important; /* Gelap pekat untuk Light Mode */
+    border: 1px solid #10b981;
+}
+
+/* 2. Status Semi Aktif */
+.status-badge.semi, span.status-badge.semi {
+    background-color: rgba(154, 52, 18, 0.4);
+    color: #fb923c; /* Terang untuk Dark Mode */
+    border: 1px solid #f97316;
+}
+body.light-mode .status-badge.semi, 
+body.light-mode span.status-badge.semi {
+    background-color: #ffedd5;
+    color: #9a3412 !important; /* Gelap pekat untuk Light Mode */
+    border: 1px solid #f97316;
+}
+
+/* 3. Status Non Aktif */
+.status-badge.inactive, span.status-badge.inactive {
+    background-color: rgba(153, 27, 27, 0.4);
+    color: #f87171; /* Terang untuk Dark Mode */
+    border: 1px solid #ef4444;
+}
+body.light-mode .status-badge.inactive, 
+body.light-mode span.status-badge.inactive {
+    background-color: #fee2e2;
+    color: #991b1b !important; /* Gelap pekat untuk Light Mode */
+    border: 1px solid #ef4444;
+}
+
+/* --- EFEK GLITCH BACKGROUND & TEXT --- */
+@keyframes glitch-anim {
+    0% {
+        background-position: 0 0;
+    }
+    10% {
+        background-position: -5px 2px;
+    }
+    20% {
+        background-position: 5px -2px;
+    }
+    30% {
+        background-position: -2px -5px;
+    }
+    40% {
+        background-position: 3px 5px;
+    }
+    50% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Menambahkan lapisan animasi glitch di background utama */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 30;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Efek glitch halus pada judul utama saat di-hover */
+h1:hover {
+    text-shadow: 2px 2px #f43f5e, -2px -2px #ec4899, 0 0 10px rgba(244, 114, 182, 0.8);
+    animation: glitch-anim 0.3s infinite;
+}
+/* --- EFEK GLITCH BACKGROUND & TEXT --- */
+@keyframes glitch-anim {
+    0% {
+        background-position: 0 0;
+    }
+    10% {
+        background-position: -5px 2px;
+    }
+    20% {
+        background-position: 5px -2px;
+    }
+    30% {
+        background-position: -2px -5px;
+    }
+    40% {
+        background-position: 3px 5px;
+    }
+    50% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Menambahkan lapisan animasi glitch di background utama */
+body::before {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+    z-index: 30;
+    background-size: 100% 3px, 6px 100%;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+/* Efek glitch halus pada judul utama saat di-hover */
+h1:hover {
+    text-shadow: 2px 2px #f43f5e, -2px -2px #ec4899, 0 0 10px rgba(244, 114, 182, 0.8);
+    animation: glitch-anim 0.3s infinite;
+}
+
+/* --- BACKGROUND GRADASI DINAMIS (DARK & LIGHT MODE) --- */
+
+/* Default / Dark Mode: Hitam ke Pink Gelap */
+body {
+    background: linear-gradient(135deg, #090207 0%, #1e0a1a 50%, #3b122c 100%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Light Mode: Pink sedang ke Pink Muda Pastel */
+body.light-mode {
+    background: linear-gradient(135deg, #fbcfe8 0%, #fed7aa 50%, #ffe4e6 100%) !important;
+    background-attachment: fixed !important;
+}
