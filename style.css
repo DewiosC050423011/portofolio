@@ -81,41 +81,20 @@ body.light-mode {
     letter-spacing: 0.3px;
 }
 
-/* OTOMATIS MENYESUAIKAN WARNA BADGE STATUS (LIGHT & DARK MODE) */
 .status-badge.active, span.status-badge.active {
     background-color: rgba(6, 95, 70, 0.4);
     color: #34d399;
     border: 1px solid #10b981;
 }
-body.light-mode .status-badge.active, 
-body.light-mode span.status-badge.active {
-    background-color: #d1fae5 !important;
-    color: #065f46 !important;
-    border: 1px solid #10b981 !important;
-}
-
 .status-badge.semi, span.status-badge.semi {
     background-color: rgba(154, 52, 18, 0.4);
     color: #fb923c;
     border: 1px solid #f97316;
 }
-body.light-mode .status-badge.semi, 
-body.light-mode span.status-badge.semi {
-    background-color: #ffedd5 !important;
-    color: #9a3412 !important;
-    border: 1px solid #f97316 !important;
-}
-
 .status-badge.inactive, span.status-badge.inactive {
     background-color: rgba(153, 27, 27, 0.4);
     color: #f87171;
     border: 1px solid #ef4444;
-}
-body.light-mode .status-badge.inactive, 
-body.light-mode span.status-badge.inactive {
-    background-color: #fee2e2 !important;
-    color: #991b1b !important;
-    border: 1px solid #ef4444 !important;
 }
 
 /* CUSTOM SCROLL-DRIVEN ANIMATION */
@@ -137,7 +116,7 @@ body.light-mode span.status-badge.inactive {
 ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 9999px; }
 ::-webkit-scrollbar-thumb:hover { background: #fb7185; }
 
-/* --- VIBE GAMING ZONE KHUSUS DI BAGIAN BAWAH --- */
+/* --- VIBE GAMING ZONE --- */
 #gaming {
     position: relative;
 }
@@ -168,9 +147,17 @@ body.light-mode span.status-badge.inactive {
     background: linear-gradient(135deg, #1f0b1a, #0d030b) !important;
     border: 3px solid #f472b6 !important;
     box-shadow: 0 0 30px rgba(244, 114, 182, 0.5), 0 10px 0px 0px #831843 !important;
+    max-width: 32rem !important;
 }
 
-/* --- TEMA LIGHT MODE (Gaya Coquette Terang & Estetik) --- */
+/* Kotak Stat di dalam Modal (Adaptif Dark & Light Mode) */
+.stat-card-box {
+    background-color: rgba(45, 15, 36, 0.6);
+    border-color: rgba(244, 114, 182, 0.3);
+    color: #fce7f3;
+}
+
+/* --- TEMA LIGHT MODE & PERBAIKAN KONTRAS --- */
 body.light-mode nav {
     background-color: rgba(255, 255, 255, 0.85) !important;
     border-color: #f472b6 !important;
@@ -242,61 +229,7 @@ body.light-mode .bg-\[\#280c1e\]\/70 p {
     color: #831843 !important;
 }
 
-body.light-mode .card-3d > div > div:first-child {
-    background-color: #ffe4e6 !important;
-    border-bottom-color: #f43f5e !important;
-}
-
-/* --- ANIMASI MOTION IKON KONTAK SAAT DIKLIK/HOVER --- */
-#contact a i {
-    display: inline-block;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), color 0.2s ease;
-}
-
-#contact a:hover i {
-    transform: translateY(-8px) scale(1.3) rotate(8deg);
-    color: #db2777 !important;
-}
-
-#contact a:active i {
-    transform: scale(0.9) rotate(-8deg);
-}
-
-body.light-mode #projects .card-3d > div > div:first-child {
-    background-color: #fbcfe8 !important;
-}
-
-body.light-mode #projects .card-3d span.absolute,
-body.light-mode #projects .card-3d .bg-pink-950\/90,
-body.light-mode #projects .card-3d .bg-pink-950\/80 {
-    background-color: #f43f5e !important;
-    color: #ffffff !important;
-    border-color: #831843 !important;
-}
-
-body.light-mode a[href="#gaming"] {
-    background-color: #ffe4e6 !important;
-    color: #831843 !important;
-    border-color: #f43f5e !important;
-}
-
-body.light-mode a[href="#gaming"]:hover {
-    background-color: #f43f5e !important;
-    color: #ffffff !important;
-}
-
-body.light-mode .inline-flex.bg-\[\#3b122c\]\/80,
-body.light-mode div.absolute.animate-float span {
-    background-color: #ffe4e6 !important;
-    border-color: #f43f5e !important;
-    color: #831843 !important;
-}
-
-body.light-mode .inline-flex.bg-\[\#3b122c\]\/80 p,
-body.light-mode div.absolute.animate-float span {
-    color: #831843 !important;
-}
-
+/* Perbaikan Kontras Light Mode pada Modal Game & Kotak Stat */
 body.light-mode #gameModal .card-content {
     background: linear-gradient(135deg, #ffe4e6, #fbcfe8) !important;
     border-color: #f43f5e !important;
@@ -304,26 +237,18 @@ body.light-mode #gameModal .card-content {
 }
 
 body.light-mode #gameModal h2,
-body.light-mode #gameModal p {
-    color: #831843 !important;
-}
-
-/* --- PERBAIKAN KONTRAS TEKS DI SECTION STATS & ORG (LIGHT MODE) --- */
-body.light-mode #stats .card-3d p,
-body.light-mode #stats .card-3d div,
-body.light-mode #stats .card-3d span,
-body.light-mode #organization .card-3d p,
-body.light-mode #organization .card-3d span {
+body.light-mode #gameModal p,
+body.light-mode #gameModal span {
     color: #500724 !important;
 }
 
-body.light-mode #stats .card-3d h3,
-body.light-mode #stats .card-3d .text-3xl,
-body.light-mode #organization .card-3d h3 {
-    color: #380214 !important;
+body.light-mode .stat-card-box {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+    border-color: #f43f5e !important;
+    color: #500724 !important;
 }
 
-/* --- ANIMASI LINE CHART / GRAFIK STATISTIK --- */
+/* --- ANIMASI LINE CHART --- */
 .stats-line {
     stroke: #f472b6;
     stroke-dasharray: 150;
@@ -340,46 +265,211 @@ body.light-mode .stats-line {
     stroke: #e11d48;
 }
 
-/* --- ANIMASI CIRCLE CHART / DONUT CHART --- */
-@keyframes rotate-chart {
-    0% {
-        stroke-dasharray: 0, 100;
-        transform: rotate(-90deg);
-    }
-}
-
+/* --- ANIMASI CIRCLE / DONUT CHART --- */
 .chart-segment {
-    animation: rotate-chart 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    transform-origin: center;
+    stroke-dasharray: 0, 100;
+    transition: stroke-dasharray 1.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* --- PERBAIKAN ANIMASI DONUT CHART AGAR LANGSUNG JALAN --- */
-@keyframes fill-donut-1 {
-    0% { stroke-dasharray: 0, 100; }
-    100% { stroke-dasharray: 40, 100; }
+/* --- SCROLLBAR KHUSUS DALAM MODAL STATISTIK GAME --- */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(22, 7, 19, 0.5);
+    border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #f472b6;
+    border-radius: 99px;
 }
 
-@keyframes fill-donut-2 {
-    0% { stroke-dasharray: 0, 100; }
-    100% { stroke-dasharray: 35, 100; }
+/* --- PERBAIKAN UKURAN FOTO DI MODAL & WEAPON --- */
+.game-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    border: 2px solid #f472b6;
+    background-color: rgba(25, 8, 20, 0.9);
+    box-shadow: 0 4px 12px rgba(244, 114, 182, 0.2);
+    margin: 0 auto;
 }
 
-@keyframes fill-donut-3 {
-    0% { stroke-dasharray: 0, 100; }
-    100% { stroke-dasharray: 25, 100; }
+/* Format Portrait (COD, Roblox, Growtopia) */
+.game-img-container.portrait {
+    width: 120px;
+    height: 160px;
 }
 
-/* Terapkan animasi langsung ke masing-masing segmen chart */
-.chart-segment:nth-child(2) {
-    animation: fill-donut-1 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+/* Format Landscape / Banner (Free Fire, MLBB, MCGG) - Dibuat Proporsional & Tidak Kegedean */
+.game-img-container.landscape {
+    width: 220px;
+    height: 115px;
 }
 
-.chart-segment:nth-child(3) {
-    animation: fill-donut-2 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.2s;
+.game-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.chart-segment:nth-child(4) {
-    animation: fill-donut-3 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-    animation-delay: 0.4s;
+/* Card Senjata Free Fire yang Rapih & Compact */
+.weapon-card-box {
+    background-color: rgba(45, 15, 36, 0.5);
+    border: 1.5px solid rgba(244, 114, 182, 0.3);
+    border-radius: 0.75rem;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.weapon-card-box:hover {
+    border-color: #f472b6;
+    background-color: rgba(60, 20, 48, 0.7);
+}
+
+.weapon-img-box {
+    width: 75px;
+    height: 45px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid #f472b6;
+    background: #000;
+    flex-shrink: 0;
+}
+
+.weapon-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Styling Modal Pilihan Mubar */
+.mabar-option-btn {
+    background: linear-gradient(135deg, #f472b6, #db2777);
+    color: white;
+    font-weight: bold;
+    border: 2px solid #831843;
+    box-shadow: 0px 4px 0px 0px #831843;
+    transition: all 0.2s ease;
+}
+.mabar-option-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 0px 0px #be185d;
+}
+.mabar-option-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0px 2px 0px 0px #831843;
+}
+
+/* --- STATUS GAME BADGE --- */
+.game-status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    border: 1px solid rgba(244, 114, 182, 0.4);
+    background-color: rgba(244, 114, 182, 0.15);
+    color: #f472b6;
+    margin-top: 4px;
+}
+
+body.light-mode .game-status-badge {
+    background-color: #ffe4e6;
+    color: #9d174d;
+    border-color: #f43f5e;
+}
+
+/* --- LIGHT MODE COMPATIBILITY UNTUK POPUP MABAR & CARD --- */
+body.light-mode .mabar-modal-box {
+    background-color: #fff0f5 !important;
+    border-color: #db2777 !important;
+    color: #831843 !important;
+}
+
+body.light-mode .mabar-content-box {
+    background-color: #ffffff !important;
+    border-color: #f472b6 !important;
+    color: #500724 !important;
+}
+
+body.light-mode .mabar-row-box {
+    background-color: #ffe4e6 !important;
+    border-color: #fda4af !important;
+    color: #831843 !important;
+}
+
+/* --- MENGHILANGKAN EFEK BULATAN/OVAL DI BELAKANG MENU MOBILE --- */
+#mobile-menu {
+    background-color: rgba(30, 10, 24, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border: 2px solid #f472b6;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.6);
+}
+
+body.light-mode #mobile-menu {
+    background-color: rgba(255, 240, 245, 0.98) !important;
+    border-color: #db2777 !important;
+}
+
+/* --- STYLING TOMBOL TEMA BERBENTUK LOGO IKON (🌙 / ☀️) --- */
+#theme-toggle {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, #3b122c, #1e0a1a);
+    border: 2px solid #ec4899;
+    box-shadow: 0px 3px 0px 0px #831843;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#theme-toggle:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 5px 0px 0px #be185d;
+}
+
+body.light-mode #theme-toggle {
+    background: linear-gradient(135deg, #fbcfe8, #f43f5e);
+    border-color: #831843;
+    box-shadow: 0px 3px 0px 0px #831843;
+}
+
+/* --- PERBAIKAN DROPDOWN MENU NAVBAR --- */
+/* Pastikan header navbar tetap pada posisinya */
+header nav, nav {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Styling dropdown menu mobile agar terpisah rapi di bawah header */
+#mobile-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 50;
+    border-radius: 1.5rem !important;
+    background-color: rgba(30, 10, 24, 0.95) !important;
+    backdrop-filter: blur(12px);
+    border: 2px solid #f472b6;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+}
+
+body.light-mode #mobile-menu {
+    background-color: rgba(255, 240, 245, 0.98) !important;
+    border-color: #db2777 !important;
 }
