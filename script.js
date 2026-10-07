@@ -84,23 +84,23 @@ const mcggCommanders = [
     { name: "Layla", power: "2150", match: "29", avg: "2.80", img: "img/layla.jpeg" }
 ];
 
-// Data Senjata Free Fire Lengkap dengan Title Banjarbaru & Foto
+// Data Senjata Free Fire Lengkap dengan Title Kota Banjarbaru & Foto (TIDAK DIUBAH)
 const ffBrWeapons = [
-    { name: "M1887", score: "3748", kills: "1076", title: "Banjarbaru #1", bar: "95%", img: "img/M1887.jpeg" },
-    { name: "XM8", score: "3895", kills: "814", title: "Banjarbaru #2", bar: "90%", img: "img/XM8.jpeg" },
-    { name: "AK47", score: "3057", kills: "554", title: "Banjarbaru #3", bar: "75%", img: "img/AK47.jpeg" },
-    { name: "M1014", score: "2800", kills: "420", title: "Banjarbaru", bar: "68%", img: "img/M1014.jpeg" },
-    { name: "Winchester", score: "2400", kills: "310", title: "Banjarbaru", bar: "60%", img: "img/Winchester.jpeg" },
-    { name: "SCAR", score: "2250", kills: "290", title: "Banjarbaru", bar: "55%", img: "img/SCAR.jpeg" }
+    { name: "M1887", score: "3748", kills: "1076", bar: "95%", img: "img/M1887.jpeg" },
+    { name: "XM8", score: "3895", kills: "814", bar: "90%", img: "img/XM8.jpeg" },
+    { name: "AK47", score: "3057", kills: "554", title: "Kota Banjarbaru #96", bar: "75%", img: "img/AK47.jpeg" },
+    { name: "M1014", score: "2800", kills: "420", bar: "68%", img: "img/M1014.jpeg" },
+    { name: "Winchester", score: "2400", kills: "310", bar: "60%", img: "img/Winchester.jpeg" },
+    { name: "SCAR", score: "2250", kills: "290", bar: "55%", img: "img/SCAR.jpeg" }
 ];
 
 const ffCsWeapons = [
-    { name: "AK47", score: "2507", kills: "739", title: "Banjarbaru #1", bar: "88%", img: "img/AK47.jpeg" },
-    { name: "G18", score: "1422", kills: "434", title: "Banjarbaru #2", bar: "65%", img: "img/G18.jpeg" },
-    { name: "SVD", score: "1140", kills: "11", title: "Banjarbaru #3", bar: "45%", img: "img/SVD.jpeg" },
-    { name: "PARAFAL", score: "1050", kills: "95", title: "Banjarbaru", bar: "40%", img: "img/Parafal.jpeg" },
-    { name: "MAC10", score: "980", kills: "82", title: "Banjarbaru", bar: "35%", img: "img/MAC10.jpeg" },
-    { name: "Mini Uzi", score: "900", kills: "70", title: "Banjarbaru", bar: "30%", img: "img/Mini Uzi.jpeg" }
+    { name: "AK47", score: "2507", kills: "739", title: "Kota Banjarbaru #44", bar: "88%", img: "img/AK47.jpeg" },
+    { name: "G18", score: "1422", kills: "434", title: "Kota Banjarbaru #32", bar: "65%", img: "img/G18.jpeg" },
+    { name: "SVD", score: "1140", kills: "11", title: "Kota Banjarbaru #12", bar: "45%", img: "img/SVD.jpeg" },
+    { name: "PARAFAL", score: "1050", kills: "95", title: "Kota Banjarbaru #60", bar: "40%", img: "img/Parafal.jpeg" },
+    { name: "MAC10", score: "980", kills: "82", title: "Kota Banjarbaru #88", bar: "35%", img: "img/MAC10.jpeg" },
+    { name: "Mini Uzi", score: "900", kills: "70", title: "Kota Banjarbaru #98", bar: "30%", img: "img/Mini Uzi.jpeg" }
 ];
 
 // Data ID Game Lengkap dengan Status Dipisah & Tombol Salin per Baris
@@ -261,7 +261,7 @@ gameCards.forEach(card => {
                     <div class="weapon-img-box"><img src="${w.img}" alt="${w.name}"></div>
                     <div class="flex-1 space-y-1 text-[11px]">
                         <div class="flex justify-between font-bold items-center">
-                            <span class="text-pink-300 text-xs">${w.name} <span class="text-[9px] text-amber-300 font-normal">(${w.title})</span></span>
+                            <span class="text-pink-300 text-xs">${w.name} ${w.title ? `<span class="text-[9px] text-amber-300 font-normal">(${w.title})</span>` : ''}</span>
                             <span class="text-[10px] opacity-90">Score: ${w.score} | Kills: ${w.kills}</span>
                         </div>
                         <div class="w-full bg-black/40 h-1.5 rounded-full overflow-hidden border border-pink-500/30">
@@ -276,7 +276,7 @@ gameCards.forEach(card => {
                     <div class="weapon-img-box"><img src="${w.img}" alt="${w.name}"></div>
                     <div class="flex-1 space-y-1 text-[11px]">
                         <div class="flex justify-between font-bold items-center">
-                            <span class="text-pink-300 text-xs">${w.name} <span class="text-[9px] text-amber-300 font-normal">(${w.title})</span></span>
+                            <span class="text-pink-300 text-xs">${w.name} ${w.title ? `<span class="text-[9px] text-amber-300 font-normal">(${w.title})</span>` : ''}</span>
                             <span class="text-[10px] opacity-90">Score: ${w.score} | Kills: ${w.kills}</span>
                         </div>
                         <div class="w-full bg-black/40 h-1.5 rounded-full overflow-hidden border border-pink-500/30">
@@ -287,7 +287,7 @@ gameCards.forEach(card => {
             `).join('');
 
             modalDesc.innerHTML = `
-                <div class="text-left text-xs space-y-3 mt-3 max-h-72 overflow-y-auto pr-1 custom-scrollbar">
+                <div class="text-left text-xs space-y-3 mt-3 max-h-[400px] overflow-y-auto pr-2 pb-4 custom-scrollbar">
                     <div class="stat-card-box p-3 rounded-2xl border flex items-center justify-around">
                         <div class="relative w-16 h-16 flex items-center justify-center">
                             <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36"><path class="text-pink-950/40" stroke-width="4" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/><path class="text-rose-400" stroke-dasharray="75, 100" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/></svg>
@@ -295,36 +295,163 @@ gameCards.forEach(card => {
                         </div>
                         <div><p class="font-bold">Free Fire Veteran Stats</p><p class="text-[10px] opacity-80 mt-0.5">${ach} • <span class="game-status-badge">Semi Aktif</span></p></div>
                     </div>
+
+                    <!-- BATTLE ROYALE STATS -->
+                    <div class="space-y-2">
+                        <p class="font-bold text-[10px]">🔥 BATTLE ROYALE STATS</p>
+                        
+                        <div class="stat-card-box p-2.5 rounded-xl border space-y-1.5 text-[11px]">
+                            <div class="flex justify-between font-bold"><span>Squad Mode</span><span class="text-pink-300">K/D 4.00</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-80">
+                                <span>Match: 7,558</span>
+                                <span>Wins: 1,400</span>
+                                <span>Kill: 24,641</span>
+                            </div>
+                            <div class="w-full bg-black/30 h-1.5 rounded-full overflow-hidden border"><div class="bg-gradient-to-r from-pink-500 to-rose-400 h-full rounded-full" style="width: 85%;"></div></div>
+                        </div>
+
+                        <div class="stat-card-box p-2.5 rounded-xl border space-y-1.5 text-[11px]">
+                            <div class="flex justify-between font-bold"><span>Solo Mode</span><span class="text-pink-300">K/D 3.50</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-80">
+                                <span>Match: 1,200</span>
+                                <span>Wins: 210</span>
+                                <span>Kill: 3,450</span>
+                            </div>
+                            <div class="w-full bg-black/30 h-1.5 rounded-full overflow-hidden border"><div class="bg-gradient-to-r from-pink-500 to-rose-400 h-full rounded-full" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- CLASH SQUAD STATS -->
+                    <div class="space-y-2">
+                        <p class="font-bold text-[10px]">⚡ CLASH SQUAD STATS</p>
+                        <div class="stat-card-box p-2.5 rounded-xl border space-y-1.5 text-[11px]">
+                            <div class="flex justify-between font-bold"><span>Ranked Mode</span><span class="text-pink-300">Win Rate 68.5%</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-80">
+                                <span>Match: 3,420</span>
+                                <span>Wins: 2,342</span>
+                                <span>MVP: 1,105</span>
+                            </div>
+                            <div class="w-full bg-black/30 h-1.5 rounded-full overflow-hidden border"><div class="bg-gradient-to-r from-pink-500 to-rose-400 h-full rounded-full" style="width: 88%;"></div></div>
+                        </div>
+                    </div>
+
+                    <!-- BATTLE ROYALE (BR) ROLE -->
+                    <div class="space-y-2 pt-2 border-t border-pink-500/30">
+                        <p class="font-bold text-[10px]">🎯 BATTLE ROYALE (BR) ROLE</p>
+                        <div class="stat-card-box p-3 rounded-2xl border flex items-center justify-around">
+                            <div class="relative w-16 h-16 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-pink-950/40" stroke-width="4" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-pink-400" stroke-dasharray="56, 100" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-rose-400" stroke-dasharray="26, 100" stroke-dashoffset="-56" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-purple-400" stroke-dasharray="14, 100" stroke-dashoffset="-82" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                </svg>
+                                <div class="absolute font-pixel text-[6px] text-current">BR</div>
+                            </div>
+                            <div class="text-[10px] space-y-1">
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-pink-400 mr-1"></span> Rusher: 56% (Lv14)</p>
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-rose-400 mr-1"></span> Rifler: 26% (Lv15)</p>
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-purple-400 mr-1"></span> Support: 14% (Lv2)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CLASH SQUAD (CS) ROLE -->
+                    <div class="space-y-2 pt-1">
+                        <p class="font-bold text-[10px]">🎯 CLASH SQUAD (CS) ROLE</p>
+                        <div class="stat-card-box p-3 rounded-2xl border flex items-center justify-around">
+                            <div class="relative w-16 h-16 flex items-center justify-center">
+                                <svg class="w-full h-full transform -rotate-90" viewBox="0 0 36 36">
+                                    <path class="text-pink-950/40" stroke-width="4" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-pink-400" stroke-dasharray="61, 100" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-rose-400" stroke-dasharray="30, 100" stroke-dashoffset="-61" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                    <path class="text-purple-400" stroke-dasharray="5, 100" stroke-dashoffset="-91" stroke-width="4" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                </svg>
+                                <div class="absolute font-pixel text-[6px] text-current">CS</div>
+                            </div>
+                            <div class="text-[10px] space-y-1">
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-pink-400 mr-1"></span> Rusher: 61% (Lv11)</p>
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-rose-400 mr-1"></span> Rifler: 30% (Lv13)</p>
+                                <p><span class="w-2 h-2 rounded-full inline-block bg-purple-400 mr-1"></span> Support: 5% (Lv3)</p>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="space-y-1.5 pt-2"><p class="font-bold text-[10px]">🏆 FAV BATTLE ROYALE WEAPONS</p><div class="grid grid-cols-1 gap-2">${brWeaponsHtml}</div></div>
-                    <div class="space-y-1.5 pt-1"><p class="font-bold text-[10px]">🏆 FAV CLASH SQUAD WEAPONS</p><div class="grid grid-cols-1 gap-2">${csWeaponsHtml}</div></div>
+                    <div class="space-y-1.5 pt-1 pb-2"><p class="font-bold text-[10px]">🏆 FAV CLASH SQUAD WEAPONS</p><div class="grid grid-cols-1 gap-2">${csWeaponsHtml}</div></div>
                 </div>
             `;
         } 
-        // Render Mobile Legends
+        // Render Mobile Legends (LENGKAP DENGAN STATS, KDA, POWER, DAN WR TERPISAH PER BARIS)
         else if (gameType === 'ml') {
             let heroesAllHtml = mlHeroesAll.map(h => `
                 <div class="stat-card-box border rounded-xl p-2.5 flex flex-col gap-2">
                     <div class="flex items-center gap-2.5">
                         <img src="${h.img}" alt="${h.name}" class="w-10 h-10 rounded-lg object-cover border border-pink-400">
-                        <div class="text-[11px] flex-1"><div class="flex justify-between font-bold"><span>${h.name}</span><span>WR ${h.wr}</span></div><p class="text-[10px] opacity-70">Power: ${h.power} | Match: ${h.match}</p></div>
+                        <div class="text-[11px] flex-1">
+                            <div class="flex justify-between font-bold"><span>${h.name}</span><span class="text-pink-300">WR ${h.wr}</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-75 mt-0.5">
+                                <span>Power: ${h.power}</span>
+                                <span>Match: ${h.match}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `).join('');
 
-            modalDesc.innerHTML = `<div class="text-left text-xs space-y-3 mt-3 max-h-72 overflow-y-auto pr-1 custom-scrollbar"><div class="space-y-1.5"><p class="font-bold text-[10px]">⭐ HERO FAVORIT</p><div class="grid grid-cols-1 gap-2">${heroesAllHtml}</div></div></div>`;
+            let heroesCurHtml = mlHeroesCur.map(h => `
+                <div class="stat-card-box border rounded-xl p-2.5 flex flex-col gap-2">
+                    <div class="flex items-center gap-2.5">
+                        <img src="${h.img}" alt="${h.name}" class="w-10 h-10 rounded-lg object-cover border border-pink-400">
+                        <div class="text-[11px] flex-1">
+                            <div class="flex justify-between font-bold"><span>${h.name}</span><span class="text-pink-300">WR ${h.wr}</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-75 mt-0.5">
+                                <span>Power: ${h.power}</span>
+                                <span>Match: ${h.match}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+            modalDesc.innerHTML = `
+                <div class="text-left text-xs space-y-3 mt-3 max-h-[380px] overflow-y-auto pr-2 pb-4 custom-scrollbar">
+                    <div class="space-y-1.5">
+                        <p class="font-bold text-[10px]">⭐ HERO ALL TIME</p>
+                        <div class="grid grid-cols-1 gap-2">${heroesAllHtml}</div>
+                    </div>
+                    <div class="space-y-1.5 pt-2">
+                        <p class="font-bold text-[10px]">🔥 HERO CURRENT SEASON</p>
+                        <div class="grid grid-cols-1 gap-2">${heroesCurHtml}</div>
+                    </div>
+                </div>
+            `;
         } 
-        // Render Magic Chess
+        // Render Magic Chess (LENGKAP COMMANDER)
         else if (gameType === 'mcgg') {
             let cmdHtml = mcggCommanders.map(c => `
                 <div class="stat-card-box border rounded-xl p-2.5 flex flex-col gap-2">
                     <div class="flex items-center gap-3">
                         <img src="${c.img}" alt="${c.name}" class="w-10 h-10 rounded-xl object-cover border border-pink-400">
-                        <div class="text-[11px] flex-1"><div class="flex justify-between font-bold"><span>${c.name}</span><span>Avg ${c.avg}</span></div><p class="text-[10px] opacity-75">Power: ${c.power} | Match: ${c.match}</p></div>
+                        <div class="text-[11px] flex-1">
+                            <div class="flex justify-between font-bold"><span>${c.name}</span><span class="text-pink-300">Avg ${c.avg}</span></div>
+                            <div class="flex flex-col space-y-0.5 text-[10px] opacity-75 mt-0.5">
+                                <span>Power: ${c.power}</span>
+                                <span>Match: ${c.match}</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             `).join('');
 
-            modalDesc.innerHTML = `<div class="text-left text-xs space-y-3 mt-3"><div class="space-y-1.5"><p class="font-bold text-[10px]">♟️ COMMANDER ANDALAN</p><div class="grid grid-cols-1 gap-2">${cmdHtml}</div></div></div>`;
+            modalDesc.innerHTML = `
+                <div class="text-left text-xs space-y-3 mt-3">
+                    <div class="space-y-1.5">
+                        <p class="font-bold text-[10px]">♟️ COMMANDER ANDALAN</p>
+                        <div class="grid grid-cols-1 gap-2">${cmdHtml}</div>
+                    </div>
+                </div>
+            `;
         } else {
             modalDesc.textContent = desc;
         }
@@ -376,7 +503,6 @@ if (skuyMabarBtn) {
         `;
         document.body.appendChild(mabarBox);
 
-        // Tombol Tutup Mabar Box
         document.getElementById('closeMabarBox').addEventListener('click', () => {
             mabarBox.remove();
         });
@@ -407,7 +533,6 @@ window.addEventListener('click', (e) => {
 const themeToggleBtn = document.getElementById('theme-toggle');
 const bodyElement = document.body;
 
-// Set ikon awal saat halaman dimuat
 if (themeToggleBtn) {
     if (bodyElement.classList.contains('light-mode')) {
         themeToggleBtn.innerHTML = '☀️';
@@ -419,9 +544,9 @@ if (themeToggleBtn) {
         bodyElement.classList.toggle('light-mode');
         
         if (bodyElement.classList.contains('light-mode')) {
-            themeToggleBtn.innerHTML = '☀️'; // Berubah jadi matahari saat mode terang
+            themeToggleBtn.innerHTML = '☀️';
         } else {
-            themeToggleBtn.innerHTML = '🌙'; // Berubah jadi bulan saat mode gelap
+            themeToggleBtn.innerHTML = '🌙';
         }
     });
 }
