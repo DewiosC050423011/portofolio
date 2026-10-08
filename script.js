@@ -382,7 +382,7 @@ gameCards.forEach(card => {
                 </div>
             `;
         } 
-        // Render Mobile Legends (LENGKAP DENGAN STATS, KDA, POWER, DAN WR TERPISAH PER BARIS)
+        // Render Mobile Legends
         else if (gameType === 'ml') {
             let heroesAllHtml = mlHeroesAll.map(h => `
                 <div class="stat-card-box border rounded-xl p-2.5 flex flex-col gap-2">
@@ -427,7 +427,7 @@ gameCards.forEach(card => {
                 </div>
             `;
         } 
-        // Render Magic Chess (LENGKAP COMMANDER)
+        // Render Magic Chess
         else if (gameType === 'mcgg') {
             let cmdHtml = mcggCommanders.map(c => `
                 <div class="stat-card-box border rounded-xl p-2.5 flex flex-col gap-2">
@@ -461,7 +461,7 @@ gameCards.forEach(card => {
     });
 });
 
-// POP-UP MABAR INTERAKTIF DENGAN STATUS BADGE TERPISAH & SUPPORT LIGHT MODE
+// POP-UP MABAR INTERAKTIF
 if (skuyMabarBtn) {
     skuyMabarBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -483,11 +483,7 @@ if (skuyMabarBtn) {
                 
                 <div class="mabar-content-box bg-black/60 p-3.5 rounded-xl border border-pink-500/40 space-y-2 text-left">
                     <p class="text-[10px] uppercase text-pink-400 font-bold tracking-wider text-center pb-1">Pilih Info untuk Disalin:</p>
-                    
-                    <!-- Baris ID / GrowID / World -->
                     ${gameInfo.htmlRows}
-
-                    <!-- Baris Discord (dooxv4) -->
                     <div class="mabar-row-box bg-pink-950/40 p-2.5 rounded-xl border border-pink-500/30 flex justify-between items-center text-xs text-white">
                         <div><span class="text-pink-300 font-bold">Discord:</span> <span class="font-mono font-bold select-all ml-1">dooxv4</span></div>
                         <button onclick="copyToClipboard('dooxv4', 'Discord ID')" class="bg-pink-600 hover:bg-pink-500 text-white px-2.5 py-1 rounded-lg text-[10px] font-bold transition shadow flex items-center gap-1">📋 Salin</button>
@@ -529,7 +525,7 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// 5. LIGHT MODE & DARK MODE SWITCHER (DENGAN LOGO IKON 🌙 / ☀️)
+// 5. LIGHT MODE & DARK MODE SWITCHER
 const themeToggleBtn = document.getElementById('theme-toggle');
 const bodyElement = document.body;
 
@@ -547,6 +543,37 @@ if (themeToggleBtn) {
             themeToggleBtn.innerHTML = '☀️';
         } else {
             themeToggleBtn.innerHTML = '🌙';
+        }
+    });
+}
+
+// 6. AUTOPLAY LAGU & TOMBOL KONTROL MUSIK
+document.addEventListener('click', () => {
+    const musicPlayer = document.getElementById('yt-player');
+    const musicStatus = document.getElementById('music-status');
+    
+    // Trigger iframe YouTube API untuk play (jika didukung)
+    if (musicPlayer && musicStatus && musicStatus.textContent === "Play Music") {
+        musicStatus.textContent = "Playing 🎵";
+    }
+}, { once: true });
+
+const musicToggleBtn = document.getElementById('music-toggle');
+if (musicToggleBtn) {
+    let isPlaying = true;
+    musicToggleBtn.addEventListener('click', () => {
+        const musicStatus = document.getElementById('music-status');
+        const iframe = document.getElementById('yt-player');
+        
+        if (isPlaying) {
+            // Pause simulasi dengan mengubah source / postMessage ke iframe YouTube
+            iframe.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            musicStatus.textContent = "Paused ⏸️";
+            isPlaying = false;
+        } else {
+            iframe.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            musicStatus.textContent = "Playing 🎵";
+            isPlaying = true;
         }
     });
 }

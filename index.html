@@ -15,6 +15,17 @@
     <!-- Hubungkan ke file CSS terpisah -->
     <link rel="stylesheet" href="style.css">
 </head>
+
+<!-- YouTube Audio Embed Tersembunyi -->
+<div id="youtube-audio-container" style="display:none;">
+    <iframe id="yt-player" width="200" height="200" src="https://www.youtube.com/embed/GLRFl26Q92s?enablejsapi=1&autoplay=1&loop=1&playlist=GLRFl26Q92s" frameborder="0"></iframe>
+</div>
+
+<!-- Tombol Musik Estetik di Pojok Web -->
+<button id="music-toggle" class="fixed bottom-6 left-6 z-[9999] bg-slate-900 border-2 border-pink-400 text-pink-300 px-3 py-2 rounded-2xl shadow-2xl text-xs font-bold flex items-center gap-2 hover:bg-pink-950 transition">
+    🎵 <span id="music-status">Play Music</span>
+</button>
+
 <body class="bg-dark-coquette text-pink-100 antialiased selection:bg-pink-500 selection:text-white relative overflow-x-hidden">
 
     <!-- 1. ANIMASI LOADING (PLEASE WAIT) -->
@@ -63,6 +74,7 @@
                 <a href="#organization" class="hover:text-pink-400 transition">▶ ORG</a>
                 <a href="#skills" class="hover:text-pink-400 transition">▶ SKILLS</a>
                 <a href="#projects" class="hover:text-pink-400 transition">▶ WORK</a>
+                <a href="#articles" class="hover:text-pink-400 transition">▶ ARTICLES</a>
                 <a href="#gaming" class="hover:text-pink-400 transition">▶ GAMING</a>
                 <a href="#contact" class="hover:text-pink-400 transition">▶ CONTACT</a>
             </div>
@@ -74,6 +86,7 @@
             <a href="#organization" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ORG</a>
             <a href="#skills" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ SKILLS</a>
             <a href="#projects" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ WORK</a>
+            <a href="#articles" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ ARTICLES</a>
             <a href="#gaming" class="hover:text-pink-400 py-1 border-b border-pink-900/50">▶ GAMING</a>
             <a href="#contact" class="hover:text-pink-400 py-1">▶ CONTACT</a>
         </div>
@@ -571,10 +584,49 @@
         </div>
     </section>
 
+    <!-- 06. PRESS MENTIONS & ARTICLES (DEWI OKTOVIA SALEHAH) -->
+    <section id="articles" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
+        <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
+            <span>📰</span> 06. PRESS & ARTICLES 🎀
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 scroll-reveal">
+            <!-- Artikel 1: Duta TV (Pelatihan Jurnalistik LPM Lensa Poliban) -->
+            <div class="card-3d p-6 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-300">MEDIA COVERAGE • DUTA TV</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">LPM Lensa Poliban Gelar Pelatihan Jurnalistik</h3>
+                    <p class="text-pink-200/80 text-xs mb-4 leading-relaxed">
+                        Liputan media mengenai kegiatan pelatihan jurnalistik tingkat dasar yang diselenggarakan oleh UKM LPM Lensa Politeknik Negeri Banjarmasin di Aula Kampus Poliban.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-pink-900/40 flex justify-between items-center text-[11px] font-mono text-pink-300">
+                    <span>Duta TV (Januari 2026)</span>
+                    <a href="https://dutatv.com/lpm-lensa-poliban-gelar-pelatihan-jurnalistik/" target="_blank" class="font-pixel text-[8px] bg-pink-950/80 border border-pink-500/60 px-3 py-1 rounded-full text-pink-300 hover:text-white transition">BACA BERITA ▶</a>
+                </div>
+            </div>
+
+            <!-- Artikel 2: Rekam Jejak Kepemimpinan & Organisasi -->
+            <div class="card-3d p-6 rounded-3xl flex flex-col justify-between">
+                <div>
+                    <span class="font-pixel text-[9px] text-pink-300">LEADERSHIP & PRESS</span>
+                    <h3 class="text-base font-bold text-white mt-1 mb-2">Pimpinan Umum LPM Lensa Poliban</h3>
+                    <p class="text-pink-200/80 text-xs mb-4 leading-relaxed">
+                        Dokumentasi resmi dan arsip keorganisasian yang memuat nama <span class="text-pink-300 font-semibold">Dewi Oktovia Salehah</span> sebagai Pimpinan Umum LPM Lensa Poliban.
+                    </p>
+                </div>
+                <div class="pt-3 border-t border-pink-900/40 flex justify-between items-center text-[11px] font-mono text-pink-300">
+                    <span>Arsip Kampus Poliban</span>
+                    <span class="text-[9px] font-pixel text-pink-400/70">VERIFIED ARCHIVE 🌸</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- GAMING UNIVERSE SECTION -->
     <section id="gaming" class="py-16 md:py-20 px-4 md:px-6 max-w-6xl mx-auto border-t-2 border-dashed border-pink-900/50 scroll-mt-24">
         <h2 class="font-pixel text-base md:text-xl text-pink-300 mb-8 md:mb-10 flex items-center gap-2 md:gap-3 scroll-reveal">
-            <span>🎮</span> 06. GAMING UNIVERSE 🎀
+            <span>🎮</span> 07. GAMING UNIVERSE 🎀
         </h2>
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 scroll-reveal">
